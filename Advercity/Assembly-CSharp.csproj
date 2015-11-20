@@ -55,27 +55,13 @@
      <Compile Include="Assets\Script\Hazard.cs" />
      <Compile Include="Assets\Script\Player_Character.cs" />
      <Compile Include="Assets\Script\Resources_manager.cs" />
-     <Compile Include="Assets\Script\Thread_manager.cs" />
-     <None Include="Assets\RAIN\Editor\Shaders\AspectSphereShader.shader" />
-     <None Include="Assets\RAIN\Editor\Shaders\VisualSensorLineShader.shader" />
-     <None Include="Assets\RAIN\Editor\Shaders\NavMeshContourShader.shader" />
-     <None Include="Assets\RAIN\Editor\Shaders\WaypointShader.shader" />
-     <None Include="Assets\RAIN\Editor\ScriptTemplates\BehaviorTreeTemplate.xml" />
-     <None Include="Assets\RAIN\Editor\Shaders\VisualSensorRingShader.shader" />
-     <None Include="Assets\RAIN\ReleaseNotes.txt" />
-     <None Include="Assets\RAIN\Editor\Shaders\AspectRingShader.shader" />
-     <None Include="Assets\RAIN\Editor\Shaders\NavMeshColliderShader.shader" />
+     <Compile Include="Assets\Script\RotateAround.cs" />
+     <Compile Include="Assets\Script\Threat_manager.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
- </Reference>
- <Reference Include="RAIN">
- <HintPath>D:/Projet Git/Advercity/Advercity/Assets/RAIN/RAIN.dll</HintPath>
- </Reference>
- <Reference Include="RAINMetaform">
- <HintPath>D:/Projet Git/Advercity/Advercity/Assets/RAIN/RAINMetaform.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
  <HintPath>D:/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>

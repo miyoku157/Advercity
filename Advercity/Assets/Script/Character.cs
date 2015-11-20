@@ -21,6 +21,9 @@ namespace AssemblyCSharp
 		{
 			base.Update ();
 		}
+		public void Move(Vector3 position){
+			base.move (position);
+		}
 
 	}
 }
