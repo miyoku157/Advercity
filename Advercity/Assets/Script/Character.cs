@@ -13,18 +13,24 @@ namespace AssemblyCSharp
 {
 	public class Character:Being
 	{
+		protected Item[] Inventaire;
 		protected override void Start ()
 		{
 			base.Start ();
+			StartCoroutine(base.Iainit ());
 		}
+	
 		protected override void Update ()
 		{
 			base.Update ();
+			if (base.target != null) {
+				base.move(target.gameObject.transform.position);
+			}
 		}
-		public void Move(Vector3 position){
-			base.move (position);
+		protected override void GetSensorPositionData (out Vector3 a_position)
+		{
+			base.GetSensorPositionData (out a_position);
 		}
-
 	}
 }
 

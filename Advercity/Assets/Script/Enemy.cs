@@ -9,17 +9,27 @@
 //------------------------------------------------------------------------------
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 namespace AssemblyCSharp
 {
 	public class Enemy:Being
 	{
+		public static List<Enemy> Instance= new List<Enemy>();
 		protected override void Start ()
 		{
 			base.Start ();
+			Instance.Add (this);
 		}
 		protected override void Update ()
 		{
 			base.Update ();
+		}
+		protected override void GetSensorPositionData (out Vector3 a_position)
+		{
+			base.GetSensorPositionData (out a_position);
+		}
+	 	void OnDestroy(){
+			Instance.Remove (this);
 		}
 	}
 }
