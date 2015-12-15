@@ -50,11 +50,7 @@ namespace AssemblyCSharp
         {
             return true;
         }
-
-        virtual protected void move(Vector3 position)
-        {
-            agent.SetDestination(position);
-        }
+		
 
         virtual protected IEnumerator attack(GameObject Gobject)
         {
@@ -67,7 +63,6 @@ namespace AssemblyCSharp
             {
                 if (Vector3.Distance(Gobject.transform.position, this.transform.position) < scope)
                 {
-                    move(Gobject.transform.position);
                 }
                 else
                 {
