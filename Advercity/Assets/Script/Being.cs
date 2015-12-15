@@ -63,6 +63,7 @@ namespace AssemblyCSharp
             {
                 if (Vector3.Distance(Gobject.transform.position, this.transform.position) < scope)
                 {
+                    GetComponent<NavMeshAgent>().SetDestination(Gobject.transform.position);
                 }
                 else
                 {
