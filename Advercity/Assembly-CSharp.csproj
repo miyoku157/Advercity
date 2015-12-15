@@ -52,6 +52,7 @@
      <Compile Include="Assets\Script\Building_manager.cs" />
      <Compile Include="Assets\Script\Character.cs" />
      <Compile Include="Assets\Script\Enemy.cs" />
+     <Compile Include="Assets\Script\GameController.cs" />
      <Compile Include="Assets\Script\Hazard.cs" />
      <Compile Include="Assets\Script\Player_Character.cs" />
      <Compile Include="Assets\Script\Resources_manager.cs" />
@@ -64,20 +65,24 @@
      <Compile Include="Assets\Synapse\Demo\World\NPC\Points.cs" />
      <Compile Include="Assets\Synapse\Demo\World\RandomSpawner.cs" />
      <None Include="Assets\Synapse\Readme.txt" />
+     <None Include="Assets\Resources\FogOfWar\FogOfWar.shader" />
+ <Reference Include="UnityEngine.Advertisements">
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
- <Reference Include="Test">
- <HintPath>D:/Projet Git/Advercity/Advercity/Assets/Test.dll</HintPath>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="Synapse.Runtime">
- <HintPath>D:/Projet Git/Advercity/Advercity/Assets/Synapse/Synapse.Runtime.dll</HintPath>
+ <HintPath>D:/Projet Git/Advercity/Advercity/Advercity/Assets/Synapse/Synapse.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="SynapseDemo">
- <HintPath>D:/Projet Git/Advercity/Advercity/Assets/Synapse/Demo/SynapseDemo.dll</HintPath>
+ <HintPath>D:/Projet Git/Advercity/Advercity/Advercity/Assets/Synapse/Demo/SynapseDemo.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
  <HintPath>D:/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>

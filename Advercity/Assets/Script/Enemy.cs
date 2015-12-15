@@ -14,11 +14,9 @@ namespace AssemblyCSharp
 {
 	public class Enemy:Being
 	{
-		public static List<Enemy> Instance= new List<Enemy>();
 		protected override void Start ()
 		{
 			base.Start ();
-			Instance.Add (this);
 		}
 		protected override void Update ()
 		{
@@ -29,8 +27,12 @@ namespace AssemblyCSharp
 			base.GetSensorPositionData (out a_position);
 		}
 	 	void OnDestroy(){
-			Instance.Remove (this);
 		}
+		protected object[] GetLayeropponentsData()
+		{
+			return Being.Units;
+		}
+
 	}
 }
 

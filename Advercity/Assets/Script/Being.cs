@@ -1,10 +1,15 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using Synapse.Runtime;
 namespace AssemblyCSharp
 {
 	public abstract class Being : MonoBehaviour {
+		public static List<Being>[] Units;
+		protected int idGroup;
 		protected Brain brain;
+		protected NavMeshAgent agent;
+
 		protected Being target;
 		protected float strenght;
 		protected float stamina;
@@ -12,14 +17,13 @@ namespace AssemblyCSharp
 		protected float perception;
 		protected float charisma;
 		protected float scope;
-		protected NavMeshAgent agent;
+
 		// Use this for initialization
 		virtual protected void Start () {
 			agent = GetComponent<NavMeshAgent> ();
 
 		}
 		virtual protected IEnumerator Iainit(){
-			brain = new SynapseLibrary_Test.Deplacement.Move (this);
 			while(Application.isPlaying&&brain!=null){
 				AIUpdate();
 				yield return new WaitForSeconds(1);
@@ -34,41 +38,19 @@ namespace AssemblyCSharp
 		}
 		// Update is called once per frame
 		virtual protected void Update () {
+
 		}
 
 		virtual protected bool resolver(){
 			return true;
 		}
 
-		virtual protected GameObject getTarget(){
-			RaycastHit Hit;
-			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-			if (Physics.Raycast(ray,out Hit, 100)) {// modifier la distance finalel
-				if(Hit.collider.tag=="Being"){
-					return Hit.transform.gameObject;
-				}
-			}
-			return null;
-		}
-
-		virtual protected Vector3 getMousePosition(){
-			RaycastHit Hit;
-			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-			if (Physics.Raycast(ray,out Hit, 100)) {// modifier la distance finalel
-				if(Hit.collider.tag=="Map"){
-					return Hit.point;
-				}else if(Hit.collider.tag=="Item"){
-				}else if (Hit.collider.tag=="Ennemy"){
-				}
-			}
-			return Vector3.zero;
-		}
 		virtual protected void move(Vector3 position){
 			agent.SetDestination (position);
 		}
 
 		virtual protected IEnumerator attack(GameObject Gobject){
-			Being stat;
+			Being stat=null;
 			if (gameObject.GetComponent<Being> () != null) {
 				stat= gameObject.GetComponent<Being> ();
 			}
@@ -79,27 +61,15 @@ namespace AssemblyCSharp
 						//add attack animation here
 						resolver();
 					}
-					yield return new WaitForSeconds(0.1);
+					yield return new WaitForSeconds(0.1f);
 				}
 			}
 
 
-		virtual protected object[] GetLayerboxData()
-		{
-			return Enemy.Instance.ToArray();
-		}
+
 		virtual protected void GetSensorPositionData(out Vector3 a_position)
 		{
 			a_position = gameObject.transform.position;
-		}
-		virtual protected void DesireFollowCallback(object a_collectible)
-		{		
-			target = a_collectible as Enemy;
-		}
-		
-		virtual protected void DesireCoolCallback()
-		{
-			target = null;
 		}
 	}
 }
