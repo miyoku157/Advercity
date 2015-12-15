@@ -11,16 +11,16 @@ using UnityEngine;
 using System.Collections;
 namespace AssemblyCSharp
 {
-	public class Player_Character:Character
-	{
-		protected override void Start ()
-		{
-			base.Start ();
-		}
-		protected override void Update ()
-		{
-			base.Update ();
-		}
-	}
+    public class Player_Character : Character
+    {
+        protected override void Start()
+        {
+            base.Start();
+        }
+        protected override void Update()
+        {
+            base.Update();
+        }
+    }
 }
 

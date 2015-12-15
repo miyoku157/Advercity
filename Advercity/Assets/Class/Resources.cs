@@ -10,11 +10,11 @@
 using System;
 namespace AssemblyCSharp
 {
-	public class Resources:Item
-	{
-		public Resources ()
-		{
-		}
-	}
+    public class Resources : Item
+    {
+        public Resources()
+        {
+        }
+    }
 }
 

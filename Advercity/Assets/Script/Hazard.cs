@@ -11,16 +11,16 @@ using UnityEngine;
 using System.Collections;
 namespace AssemblyCSharp
 {
-	public class Hazard:Being
-	{
-		protected override void Start ()
-		{
-			base.Start ();
-		}
-		protected override void Update ()
-		{
-			base.Update ();
-		}
-	}
+    public class Hazard : Being
+    {
+        protected override void Start()
+        {
+            base.Start();
+        }
+        protected override void Update()
+        {
+            base.Update();
+        }
+    }
 }
 

@@ -12,27 +12,28 @@ using System.Collections;
 using System.Collections.Generic;
 namespace AssemblyCSharp
 {
-	public class Enemy:Being
-	{
-		protected override void Start ()
-		{
-			base.Start ();
-		}
-		protected override void Update ()
-		{
-			base.Update ();
-		}
-		protected override void GetSensorPositionData (out Vector3 a_position)
-		{
-			base.GetSensorPositionData (out a_position);
-		}
-	 	void OnDestroy(){
-		}
-		protected object[] GetLayeropponentsData()
-		{
-			return Being.Units;
-		}
+    public class Enemy : Being
+    {
+        protected override void Start()
+        {
+            base.Start();
+        }
+        protected override void Update()
+        {
+            base.Update();
+        }
+        protected override void GetSensorPositionData(out Vector3 a_position)
+        {
+            base.GetSensorPositionData(out a_position);
+        }
+        void OnDestroy()
+        {
+        }
+        protected object[] GetLayeropponentsData()
+        {
+            return Being.Units;
+        }
 
-	}
+    }
 }
 
