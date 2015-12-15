@@ -28,7 +28,7 @@ namespace AssemblyCSharp
             base.Update();
             if (base.target != null)
             {
-                base.move(target.gameObject.transform.position);
+                GetComponent<NavMeshAgent>().SetDestination(target.gameObject.transform.position);
             }
             Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
             Ray rayToPlayerPos = Camera.main.ScreenPointToRay(screenPos);
