@@ -10,7 +10,7 @@ namespace AssemblyCSharp
         protected int idGroup;
         protected Brain brain;
         protected NavMeshAgent agent;
-
+		protected bool isAttacking = false;
         protected Being target;
         protected float strenght;
         protected float stamina;
@@ -23,7 +23,8 @@ namespace AssemblyCSharp
         virtual protected void Start()
         {
             agent = GetComponent<NavMeshAgent>();
-
+			//to delete
+			stamina = 100;
         }
         virtual protected IEnumerator Iainit()
         {
@@ -46,33 +47,43 @@ namespace AssemblyCSharp
 
         }
 
-        virtual protected bool resolver()
+        virtual public bool resolver()
         {
             return true;
         }
 		
+		virtual public void move(Vector3 position){
+			isAttacking = false;
+			GetComponent<NavMeshAgent> ().SetDestination (position);
+		}
+		virtual public void launchAttack(GameObject Target){
+			isAttacking = true;
+			StartCoroutine ("attack", Target);		
+		}
 
-        virtual protected IEnumerator attack(GameObject Gobject)
-        {
-            Being stat = null;
-            if (gameObject.GetComponent<Being>() != null)
-            {
-                stat = gameObject.GetComponent<Being>();
-            }
-            while (stat.stamina > 0)
-            {
-                if (Vector3.Distance(Gobject.transform.position, this.transform.position) < scope)
-                {
-                    GetComponent<NavMeshAgent>().SetDestination(Gobject.transform.position);
-                }
-                else
-                {
-                    //add attack animation here
-                    resolver();
-                }
-                yield return new WaitForSeconds(0.1f);
-            }
-        }
+
+		// changer coroutine en vrai fonction tout en essayant de garder maitrise du temps régler le scope aussi
+		virtual protected IEnumerator attack(GameObject Gobject)
+		{
+			Being stat = null;
+			if (gameObject.GetComponent<Being>() != null)
+			{
+				stat = gameObject.GetComponent<Being>();
+			}
+			while (stat.stamina > 0&&isAttacking)
+			{
+				if (Vector3.Distance(Gobject.transform.position, this.transform.position) < scope)
+				{
+					move(Gobject.transform.position);
+				}
+				else
+				{
+					//add attack animation here
+					resolver();
+				}
+				yield return new WaitForSeconds(0.1f);
+			}
+		}
 
 
 

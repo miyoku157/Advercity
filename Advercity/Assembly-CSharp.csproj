@@ -66,11 +66,17 @@
      <Compile Include="Assets\Synapse\Demo\World\RandomSpawner.cs" />
      <None Include="Assets\Synapse\Readme.txt" />
      <None Include="Assets\Resources\FogOfWar\FogOfWar.shader" />
+ <Reference Include="UnityEngine.Advertisements">
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="Synapse.Runtime">
  <HintPath>D:/Projet Git/Advercity/Advercity/Advercity/Assets/Synapse/Synapse.Runtime.dll</HintPath>
