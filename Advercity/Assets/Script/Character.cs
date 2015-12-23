@@ -14,22 +14,20 @@ namespace AssemblyCSharp
     public class Character : Being
     {
         public Transform FogOfWarPlane;
-        protected Item[] Inventaire;
         protected int idGroupe;
         protected override void Start()
         {
             base.Start();
             idGroupe = 0;
+
             StartCoroutine(base.Iainit());
         }
 
         protected override void Update()
         {
             base.Update();
-            if (base.target != null)
-            {
-                GetComponent<NavMeshAgent>().SetDestination(target.gameObject.transform.position);
-            }
+
+			//Fog of war update; set position and perception of the object and the plane
             Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
             Ray rayToPlayerPos = Camera.main.ScreenPointToRay(screenPos);
             RaycastHit hit;

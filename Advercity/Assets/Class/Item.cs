@@ -10,11 +10,17 @@
 using System;
 namespace AssemblyCSharp
 {
-    abstract public class Item
+	public abstract class Item
     {
+		protected string name;
+		//image
+
         public Item()
         {
+
+
         }
+
     }
 }
 

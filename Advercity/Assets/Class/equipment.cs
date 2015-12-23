@@ -12,8 +12,13 @@ namespace AssemblyCSharp
 {
     public class equipment : Item
     {
+		public int damage;
+		public int bonus;
+		public int bonusScope;
+
         public equipment()
         {
+
         }
     }
 }

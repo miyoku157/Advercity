@@ -36,12 +36,14 @@ namespace AssemblyCSharp
 					if(attObj != controller)
 					{
 						// Modifier attack pour qu'il créer une coroutine dans Being
+						selecttarget.GetComponent<Being>().isAttacking=true;
 						selecttarget.GetComponent<Being>().launchAttack(attObj);
 					}
 					else if (controller != null)
 		            {
 		                if (selecttarget.GetComponent<Being>())
 		                {
+							selecttarget.GetComponent<Being>().isAttacking=false;
 							selecttarget.GetComponent<Being>().move(controller.transform.position);
 		                    //todo
 		                }

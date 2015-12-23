@@ -48,9 +48,6 @@
      <Compile Include="Assets\Synapse\Editor\SynapseAssetInspector.cs" />
      <None Include="Assets\Synapse\Readme.txt" />
      <None Include="Assets\Resources\FogOfWar\FogOfWar.shader" />
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
@@ -65,9 +62,6 @@
  </Reference>
  <Reference Include="UnityEditor.Networking">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Analytics">
- <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="Synapse.Runtime">
  <HintPath>D:/Projet Git/Advercity/Advercity/Advercity/Assets/Synapse/Synapse.Runtime.dll</HintPath>
