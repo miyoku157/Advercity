@@ -1,77 +1,92 @@
 ﻿using UnityEngine;
-using System;
-public class RotateAround : MonoBehaviour {
+using System.Collections;
+
+public class RotateAround : MonoBehaviour{
 	
+	public float speed = 5.0f;
+	public GameObject terrain;
+	public GameObject xRotator;
+	private float terrainHeight;
+	private float t = 0.0f;
+	private Vector2 mouseClickPosition;
 	
-	public float ScrollSpeed = 15;
-	
-	public float ScrollEdge = 0.1f;
-	
-	public float PanSpeed = 10;
-	
-	public Vector2 zoomRange = new Vector2( -10, 100 );
-	
-	public float CurrentZoom = 0;
-	
-	public float ZoomZpeed = 1;
-	
-	public float ZoomRotation = 1;
-	
-	public Vector2 zoomAngleRange = new Vector2( 20, 70 );
-	
-	public float rotateSpeed = 10;
-	
-	private Vector3 initialPosition;
-	
-	private Vector3 initialRotation;
-	
-	
-	void Start () {
-		initialPosition = transform.position;      
-		initialRotation = transform.eulerAngles;
+	private void moveRight(){
+		if(Input.mousePosition.x > Screen.width * 0.95f || Input.GetKey(KeyCode.RightArrow)){
+			this.transform.Translate(Vector3.right * this.speed * Time.deltaTime);
+			this.getTerrainHeight();
+		}
 	}
 	
+	private void moveLeft(){
+		if(Input.mousePosition.x < Screen.width * 0.05f || Input.GetKey(KeyCode.LeftArrow)){
+			this.transform.Translate(-Vector3.right * this.speed * Time.deltaTime);
+			this.getTerrainHeight();
+		}
+	}
 	
-	void Update () {
-		// panning     
-		if ( Input.GetMouseButton( 0 ) ) {
-			transform.Translate(Vector3.right * Time.deltaTime * PanSpeed * (Input.mousePosition.x - Screen.width * 0.5f) / (Screen.width * 0.5f), Space.World);
-			transform.Translate(Vector3.forward * Time.deltaTime * PanSpeed * (Input.mousePosition.y - Screen.height * 0.5f) / (Screen.height * 0.5f), Space.World);
+	private void moveForward(){
+		if(Input.mousePosition.y < Screen.height * 0.05f || Input.GetKey(KeyCode.DownArrow)){
+			this.transform.Translate(-Vector3.up * this.speed * Time.deltaTime);
+			this.getTerrainHeight();
 		}
-		
-		else {
-			if ( Input.GetKey("d") ) {             
-				transform.Translate(Vector3.right * Time.deltaTime * PanSpeed, Space.Self );   
-			}
-			else if ( Input.GetKey("a") ) {            
-				transform.Translate(Vector3.right * Time.deltaTime * -PanSpeed, Space.Self );              
-			}
-			
-			if ( Input.GetKey("w") || Input.mousePosition.y >= Screen.height * (1 - ScrollEdge) ) {            
-				transform.Translate(Vector3.forward * Time.deltaTime * PanSpeed, Space.Self );             
-			}
-			else if ( Input.GetKey("s") || Input.mousePosition.y <= Screen.height * ScrollEdge ) {         
-				transform.Translate(Vector3.forward * Time.deltaTime * -PanSpeed, Space.Self );            
-			}  
-			
-			if ( Input.GetKey("q") || Input.mousePosition.x <= Screen.width * ScrollEdge ) {
-				transform.Rotate(Vector3.up * Time.deltaTime * -rotateSpeed, Space.World);
-			}
-			else if ( Input.GetKey("e") || Input.mousePosition.x >= Screen.width * (1 - ScrollEdge) ) {
-				transform.Rotate(Vector3.up * Time.deltaTime * rotateSpeed, Space.World);
-			}
+	}
+	
+	private void moveBackward(){
+		if(Input.mousePosition.y > Screen.height * 0.95f || Input.GetKey(KeyCode.UpArrow)){
+			this.transform.Translate(Vector3.up * this.speed * Time.deltaTime);
+			this.getTerrainHeight();
 		}
-		
-		// zoom in/out
-		CurrentZoom -= Input.GetAxis("Mouse ScrollWheel") * Time.deltaTime * 1000 * ZoomZpeed;
-		
-		CurrentZoom = Mathf.Clamp( CurrentZoom, zoomRange.x, zoomRange.y );
-		
-		transform.position = new Vector3( transform.position.x, transform.position.y - (transform.position.y - (initialPosition.y + CurrentZoom)) * 0.1f, transform.position.z );
-		
-		float x = transform.eulerAngles.x - (transform.eulerAngles.x - (initialRotation.x + CurrentZoom * ZoomRotation)) * 0.1f;
-		x = Mathf.Clamp( x, zoomAngleRange.x, zoomAngleRange.y );
-		
-		transform.eulerAngles = new Vector3( x, transform.eulerAngles.y, transform.eulerAngles.z );
+	}
+	
+	private void getTerrainHeight(){
+		RaycastHit hit;
+		this.terrain.layer = 0;
+		// Get terrain y value at current position.
+		if(Physics.Raycast(new Vector3(this.transform.position.x, 300, this.transform.position.z), -Vector3.up, out hit, 500)){
+			this.terrainHeight = hit.point.y;
+		}
+		this.terrain.layer = 2;
+	}
+	
+
+	
+	private void rotateCamera(){
+		if(Input.GetMouseButtonDown(1)){
+			this.mouseClickPosition = Input.mousePosition;
+		}
+		if(Input.GetMouseButton(1)){
+			Vector2 delta = this.mouseClickPosition - (Vector2)Input.mousePosition;
+			this.mouseClickPosition = Input.mousePosition;
+			this.transform.Rotate(Vector3.up * -this.speed * delta.x * Time.deltaTime);
+			this.xRotator.transform.Rotate(Vector3.right * this.speed * delta.y * Time.deltaTime);
+			this.xRotator.transform.rotation =Quaternion.Euler( ClampAngle(this.xRotator.transform.rotation.eulerAngles.x, 0.0f, 40.0f),this.xRotator.transform.rotation.eulerAngles.y,this.xRotator.transform.rotation.eulerAngles.z);
+		}
+	}
+	
+	private float ClampAngle(float angle, float min, float max) {
+		if (angle<90 || angle>270){       // if angle in the critic region...
+			if (angle>180) angle -= 360;  // convert all angles to -180..+180
+			if (max>180) max -= 360;
+			if (min>180) min -= 360;
+		}   
+		angle = Mathf.Clamp(angle, min, max);
+		if (angle<0) angle += 360;  // if angle negative, convert to 0..360
+		return angle;
+	}
+	
+	public void Update(){
+		if(!Input.GetMouseButton(1)){
+			this.moveRight();
+			this.moveLeft();
+			this.moveForward();
+			this.moveBackward();
+		}
+		if(Input.GetKeyDown(KeyCode.Escape)){
+			Application.Quit();
+		}
+	}
+	
+	public void LateUpdate(){
+		this.rotateCamera();
 	}
 }
