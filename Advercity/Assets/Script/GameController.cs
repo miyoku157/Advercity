@@ -6,6 +6,7 @@ namespace AssemblyCSharp
 	{
 	    static GameObject controller;
 	    GameObject selecttarget;
+		GameObject oldSelectTarget;
 		GameObject attObj;
 	    GameObject oldObject = null;
 	    // Use this for initialization
@@ -25,26 +26,26 @@ namespace AssemblyCSharp
 	            selecttarget = getMousePosition();
 	            if (selecttarget != null)
 	            {
+					oldSelectTarget=selecttarget;
 	                //to do
 	            }
 	        }
 	        else if (Input.GetKeyDown(KeyCode.Mouse1))
 	        {
 	            attObj=getMousePosition();
-				if(selecttarget != null)
-				{
+				if(attObj!=null){
 					if(attObj != controller)
 					{
 						// Modifier attack pour qu'il créer une coroutine dans Being
-						selecttarget.GetComponent<Being>().isAttacking=true;
-						selecttarget.GetComponent<Being>().launchAttack(attObj);
+						oldSelectTarget.GetComponent<Being>().isAttacking=true;
+						oldSelectTarget.GetComponent<Being>().launchAttack(attObj);
 					}
 					else if (controller != null)
 		            {
-		                if (selecttarget.GetComponent<Being>())
+						if (oldSelectTarget.GetComponent<Being>())
 		                {
-							selecttarget.GetComponent<Being>().isAttacking=false;
-							selecttarget.GetComponent<Being>().move(controller.transform.position);
+							oldSelectTarget.GetComponent<Being>().isAttacking=false;
+							oldSelectTarget.GetComponent<Being>().move(controller.transform.position);
 		                    //todo
 		                }
 		            }

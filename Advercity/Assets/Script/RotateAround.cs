@@ -13,43 +13,26 @@ public class RotateAround : MonoBehaviour{
 	private void moveRight(){
 		if(Input.mousePosition.x > Screen.width * 0.95f || Input.GetKey(KeyCode.RightArrow)){
 			this.transform.Translate(Vector3.right * this.speed * Time.deltaTime);
-			this.getTerrainHeight();
 		}
 	}
 	
 	private void moveLeft(){
 		if(Input.mousePosition.x < Screen.width * 0.05f || Input.GetKey(KeyCode.LeftArrow)){
 			this.transform.Translate(-Vector3.right * this.speed * Time.deltaTime);
-			this.getTerrainHeight();
 		}
 	}
 	
 	private void moveForward(){
 		if(Input.mousePosition.y < Screen.height * 0.05f || Input.GetKey(KeyCode.DownArrow)){
 			this.transform.Translate(-Vector3.up * this.speed * Time.deltaTime);
-			this.getTerrainHeight();
 		}
 	}
 	
 	private void moveBackward(){
 		if(Input.mousePosition.y > Screen.height * 0.95f || Input.GetKey(KeyCode.UpArrow)){
 			this.transform.Translate(Vector3.up * this.speed * Time.deltaTime);
-			this.getTerrainHeight();
 		}
 	}
-	
-	private void getTerrainHeight(){
-		RaycastHit hit;
-		this.terrain.layer = 0;
-		// Get terrain y value at current position.
-		if(Physics.Raycast(new Vector3(this.transform.position.x, 300, this.transform.position.z), -Vector3.up, out hit, 500)){
-			this.terrainHeight = hit.point.y;
-		}
-		this.terrain.layer = 2;
-	}
-	
-
-	
 	private void rotateCamera(){
 		if(Input.GetMouseButtonDown(1)){
 			this.mouseClickPosition = Input.mousePosition;
@@ -75,12 +58,10 @@ public class RotateAround : MonoBehaviour{
 	}
 	
 	public void Update(){
-		if(!Input.GetMouseButton(1)){
-			this.moveRight();
-			this.moveLeft();
-			this.moveForward();
-			this.moveBackward();
-		}
+		this.moveRight();
+		this.moveLeft();
+		this.moveForward();
+		this.moveBackward();
 		if(Input.GetKeyDown(KeyCode.Escape)){
 			Application.Quit();
 		}
