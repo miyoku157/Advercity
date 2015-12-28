@@ -1,0 +1,87 @@
+Begin Object Class=MaterialFunction Name="ML_Plastic_Shiny_Beige_LOGO"
+   Begin Object Class=SceneThumbnailInfoWithPrimitive Name="SceneThumbnailInfoWithPrimitive_0"
+   End Object
+   Begin Object Class=MaterialExpressionTextureSample Name="MaterialExpressionTextureSample_4"
+   End Object
+   Begin Object Class=MaterialExpressionMakeMaterialAttributes Name="MaterialExpressionMakeMaterialAttributes_0"
+   End Object
+   Begin Object Class=MaterialExpressionFunctionOutput Name="MaterialExpressionFunctionOutput_0"
+   End Object
+   Begin Object Class=MaterialExpressionFunctionInput Name="MaterialExpressionFunctionInput_5"
+   End Object
+   Begin Object Class=MaterialExpressionConstant3Vector Name="MaterialExpressionConstant3Vector_2"
+   End Object
+   Begin Object Class=MaterialExpressionConstant Name="MaterialExpressionConstant_31"
+   End Object
+   Begin Object Class=MaterialExpressionConstant Name="MaterialExpressionConstant_1"
+   End Object
+   Begin Object Name="SceneThumbnailInfoWithPrimitive_0"
+   End Object
+   Begin Object Name="MaterialExpressionTextureSample_4"
+      Texture=Texture2D'/Game/AnimStarterPack/UE4_Mannequin/Textures/UE4_LOGO_CARD.UE4_LOGO_CARD'
+      SamplerType=SAMPLERTYPE_LinearColor
+      MaterialExpressionEditorX=-592
+      MaterialExpressionEditorY=528
+      MaterialExpressionGuid=2E8747DC4A18B650849B90A5AE204FB7
+      Function=MaterialFunction'ML_Plastic_Shiny_Beige_LOGO'
+   End Object
+   Begin Object Name="MaterialExpressionMakeMaterialAttributes_0"
+      BaseColor=(Expression=MaterialExpressionFunctionInput'ML_Plastic_Shiny_Beige_LOGO:MaterialExpressionFunctionInput_5')
+      Metallic=(Expression=MaterialExpressionConstant'ML_Plastic_Shiny_Beige_LOGO:MaterialExpressionConstant_1')
+      Roughness=(Expression=MaterialExpressionConstant'ML_Plastic_Shiny_Beige_LOGO:MaterialExpressionConstant_31')
+      Opacity=(OutputIndex=4,Mask=1,MaskA=1)
+      OpacityMask=(Expression=MaterialExpressionTextureSample'ML_Plastic_Shiny_Beige_LOGO:MaterialExpressionTextureSample_4',OutputIndex=4,Mask=1,MaskA=1)
+      AmbientOcclusion=(Mask=1,MaskR=1,MaskG=1,MaskB=1)
+      MaterialExpressionEditorX=440
+      MaterialExpressionEditorY=308
+      MaterialExpressionGuid=B6BE447B46CEBA27653F648EDC8B6F04
+      Function=MaterialFunction'ML_Plastic_Shiny_Beige_LOGO'
+   End Object
+   Begin Object Name="MaterialExpressionFunctionOutput_0"
+      A=(Expression=MaterialExpressionMakeMaterialAttributes'ML_Plastic_Shiny_Beige_LOGO:MaterialExpressionMakeMaterialAttributes_0')
+      bLastPreviewed=True
+      Id=9CE3E8334E850358E85C4D8B983C5493
+      MaterialExpressionEditorX=656
+      MaterialExpressionEditorY=288
+      MaterialExpressionGuid=979BF10A4E985CEAFAA06086C75A6C29
+      Function=MaterialFunction'ML_Plastic_Shiny_Beige_LOGO'
+   End Object
+   Begin Object Name="MaterialExpressionFunctionInput_5"
+      Preview=(Expression=MaterialExpressionConstant3Vector'ML_Plastic_Shiny_Beige_LOGO:MaterialExpressionConstant3Vector_2')
+      InputName="LogoColor"
+      Id=85E124924F8F61A05E9CF6A2FBF0767C
+      MaterialExpressionEditorX=96
+      MaterialExpressionGuid=BD24449347B09DACFBCB6C94AD51D6DC
+      Function=MaterialFunction'ML_Plastic_Shiny_Beige_LOGO'
+   End Object
+   Begin Object Name="MaterialExpressionConstant3Vector_2"
+      Constant=(R=0.450000,G=0.405412,B=0.357750,A=0.000000)
+      MaterialExpressionEditorX=-80
+      MaterialExpressionEditorY=16
+      MaterialExpressionGuid=C6339DA04AA8A34001E9D39716FAE395
+      Function=MaterialFunction'ML_Plastic_Shiny_Beige_LOGO'
+   End Object
+   Begin Object Name="MaterialExpressionConstant_31"
+      R=0.050000
+      MaterialExpressionEditorX=32
+      MaterialExpressionEditorY=416
+      MaterialExpressionGuid=5A462F35485939F7382DF88EC41F2477
+      Function=MaterialFunction'ML_Plastic_Shiny_Beige_LOGO'
+   End Object
+   Begin Object Name="MaterialExpressionConstant_1"
+      MaterialExpressionEditorX=64
+      MaterialExpressionEditorY=272
+      MaterialExpressionGuid=7C5BDC3D4031769AD859A9904AE9F47F
+      Function=MaterialFunction'ML_Plastic_Shiny_Beige_LOGO'
+   End Object
+   FunctionExpressions(0)=MaterialExpressionFunctionOutput'MaterialExpressionFunctionOutput_0'
+   FunctionExpressions(1)=MaterialExpressionMakeMaterialAttributes'MaterialExpressionMakeMaterialAttributes_0'
+   FunctionExpressions(2)=MaterialExpressionConstant'MaterialExpressionConstant_31'
+   FunctionExpressions(3)=MaterialExpressionConstant'MaterialExpressionConstant_1'
+   FunctionExpressions(4)=MaterialExpressionTextureSample'MaterialExpressionTextureSample_4'
+   FunctionExpressions(5)=MaterialExpressionConstant3Vector'MaterialExpressionConstant3Vector_2'
+   FunctionExpressions(6)=MaterialExpressionFunctionInput'MaterialExpressionFunctionInput_5'
+   CombinedInputTypes=4
+   CombinedOutputTypes=256
+   ThumbnailInfo=SceneThumbnailInfoWithPrimitive'SceneThumbnailInfoWithPrimitive_0'
+End Object

@@ -1,0 +1,151 @@
+Begin Object Class=MaterialFunction Name="ML_GlossyBlack_Latex_UE4"
+   Begin Object Class=SceneThumbnailInfoWithPrimitive Name="SceneThumbnailInfoWithPrimitive_0"
+   End Object
+   Begin Object Class=MaterialExpressionTextureSample Name="MaterialExpressionTextureSample_4"
+   End Object
+   Begin Object Class=MaterialExpressionTextureSample Name="MaterialExpressionTextureSample_3"
+   End Object
+   Begin Object Class=MaterialExpressionTextureCoordinate Name="MaterialExpressionTextureCoordinate_0"
+   End Object
+   Begin Object Class=MaterialExpressionMultiply Name="MaterialExpressionMultiply_1"
+   End Object
+   Begin Object Class=MaterialExpressionMultiply Name="MaterialExpressionMultiply_0"
+   End Object
+   Begin Object Class=MaterialExpressionMakeMaterialAttributes Name="MaterialExpressionMakeMaterialAttributes_0"
+   End Object
+   Begin Object Class=MaterialExpressionFunctionOutput Name="MaterialExpressionFunctionOutput_0"
+   End Object
+   Begin Object Class=MaterialExpressionFunctionInput Name="MaterialExpressionFunctionInput_1"
+   End Object
+   Begin Object Class=MaterialExpressionFunctionInput Name="MaterialExpressionFunctionInput_0"
+   End Object
+   Begin Object Class=MaterialExpressionConstant Name="MaterialExpressionConstant_5"
+   End Object
+   Begin Object Class=MaterialExpressionConstant Name="MaterialExpressionConstant_3"
+   End Object
+   Begin Object Class=MaterialExpressionConstant Name="MaterialExpressionConstant_24"
+   End Object
+   Begin Object Name="SceneThumbnailInfoWithPrimitive_0"
+   End Object
+   Begin Object Name="MaterialExpressionTextureSample_4"
+      Coordinates=(Expression=MaterialExpressionMultiply'ML_GlossyBlack_Latex_UE4:MaterialExpressionMultiply_0')
+      SamplerSource=SSM_Wrap_WorldGroupSettings
+      Texture=Texture2D'/Game/AnimStarterPack/UE4_Mannequin/Materials/MaterialLayers/T_ML_Rubber_Blue_01_N.T_ML_Rubber_Blue_01_N'
+      SamplerType=SAMPLERTYPE_Normal
+      MaterialExpressionEditorX=-256
+      MaterialExpressionEditorY=1024
+      MaterialExpressionGuid=BA9DB69C4F57A200955044B8F177DBD5
+      Function=MaterialFunction'ML_GlossyBlack_Latex_UE4'
+   End Object
+   Begin Object Name="MaterialExpressionTextureSample_3"
+      Coordinates=(Expression=MaterialExpressionMultiply'ML_GlossyBlack_Latex_UE4:MaterialExpressionMultiply_0')
+      SamplerSource=SSM_Wrap_WorldGroupSettings
+      Texture=Texture2D'/Game/AnimStarterPack/UE4_Mannequin/Materials/MaterialLayers/T_ML_Rubber_Blue_01_D.T_ML_Rubber_Blue_01_D'
+      MaterialExpressionEditorX=-1152
+      MaterialExpressionEditorY=-496
+      MaterialExpressionGuid=4CD960DF4A9D78884E5BABB637745D30
+      Function=MaterialFunction'ML_GlossyBlack_Latex_UE4'
+      bCollapsed=True
+   End Object
+   Begin Object Name="MaterialExpressionTextureCoordinate_0"
+      MaterialExpressionEditorX=-1521
+      MaterialExpressionEditorY=-245
+      MaterialExpressionGuid=48C8CA934936D3BC9D91C8AEE06BB59C
+      Function=MaterialFunction'ML_GlossyBlack_Latex_UE4'
+   End Object
+   Begin Object Name="MaterialExpressionMultiply_1"
+      A=(Expression=MaterialExpressionTextureSample'ML_GlossyBlack_Latex_UE4:MaterialExpressionTextureSample_3',Mask=1,MaskR=1,MaskG=1,MaskB=1)
+      B=(Expression=MaterialExpressionFunctionInput'ML_GlossyBlack_Latex_UE4:MaterialExpressionFunctionInput_1')
+      MaterialExpressionEditorX=-944
+      MaterialExpressionEditorY=-448
+      MaterialExpressionGuid=9D5BE6D74F01F3C1C54C8983E9E4391F
+      Function=MaterialFunction'ML_GlossyBlack_Latex_UE4'
+   End Object
+   Begin Object Name="MaterialExpressionMultiply_0"
+      A=(Expression=MaterialExpressionFunctionInput'ML_GlossyBlack_Latex_UE4:MaterialExpressionFunctionInput_0')
+      B=(Expression=MaterialExpressionTextureCoordinate'ML_GlossyBlack_Latex_UE4:MaterialExpressionTextureCoordinate_0')
+      MaterialExpressionEditorX=-1360
+      MaterialExpressionEditorY=-336
+      MaterialExpressionGuid=DA613691449188F71EDE67A28B6A1EF2
+      Function=MaterialFunction'ML_GlossyBlack_Latex_UE4'
+   End Object
+   Begin Object Name="MaterialExpressionMakeMaterialAttributes_0"
+      BaseColor=(Expression=MaterialExpressionMultiply'ML_GlossyBlack_Latex_UE4:MaterialExpressionMultiply_1')
+      Specular=(Expression=MaterialExpressionConstant'ML_GlossyBlack_Latex_UE4:MaterialExpressionConstant_24')
+      Roughness=(Expression=MaterialExpressionConstant'ML_GlossyBlack_Latex_UE4:MaterialExpressionConstant_3')
+      Normal=(Expression=MaterialExpressionTextureSample'ML_GlossyBlack_Latex_UE4:MaterialExpressionTextureSample_4',Mask=1,MaskR=1,MaskG=1,MaskB=1)
+      ClearCoat=(Expression=MaterialExpressionConstant'ML_GlossyBlack_Latex_UE4:MaterialExpressionConstant_5')
+      AmbientOcclusion=(Mask=1,MaskR=1,MaskG=1,MaskB=1)
+      MaterialExpressionEditorX=440
+      MaterialExpressionEditorY=308
+      MaterialExpressionGuid=D0CC308048367DD58CD1DDB1B5BA718D
+      Function=MaterialFunction'ML_GlossyBlack_Latex_UE4'
+   End Object
+   Begin Object Name="MaterialExpressionFunctionOutput_0"
+      SortPriority=1
+      A=(Expression=MaterialExpressionMakeMaterialAttributes'ML_GlossyBlack_Latex_UE4:MaterialExpressionMakeMaterialAttributes_0')
+      bLastPreviewed=True
+      Id=9CE3E8334E850358E85C4D8B983C5493
+      MaterialExpressionEditorX=656
+      MaterialExpressionEditorY=288
+      MaterialExpressionGuid=08A9B9E747EF7E83DF8D3E8DB4A6F778
+      Function=MaterialFunction'ML_GlossyBlack_Latex_UE4'
+   End Object
+   Begin Object Name="MaterialExpressionFunctionInput_1"
+      InputName="Tint"
+      Id=53A28BE945D98625BAFDF094A16F0B9E
+      PreviewValue=(X=0.225000,Y=0.225000,Z=0.225000,W=1.500000)
+      bUsePreviewValueAsDefault=True
+      MaterialExpressionEditorX=-1168
+      MaterialExpressionEditorY=-256
+      MaterialExpressionGuid=3E0FF0BC423845F68582E7A38019D825
+      Function=MaterialFunction'ML_GlossyBlack_Latex_UE4'
+   End Object
+   Begin Object Name="MaterialExpressionFunctionInput_0"
+      InputName="Tiling"
+      Id=E5BE05304FF98EB4BB9E6089B06F9E7E
+      InputType=FunctionInput_Scalar
+      PreviewValue=(X=50.000000,Y=0.000000,Z=0.000000,W=1.000000)
+      bUsePreviewValueAsDefault=True
+      MaterialExpressionEditorX=-1574
+      MaterialExpressionEditorY=-418
+      MaterialExpressionGuid=E13EED684A3FBFBCF273CBAAC28926B0
+      Function=MaterialFunction'ML_GlossyBlack_Latex_UE4'
+      bCollapsed=True
+   End Object
+   Begin Object Name="MaterialExpressionConstant_5"
+      MaterialExpressionEditorX=187
+      MaterialExpressionEditorY=684
+      MaterialExpressionGuid=74674EDD4F0D041FE7D701A1F7F3A702
+      Function=MaterialFunction'ML_GlossyBlack_Latex_UE4'
+   End Object
+   Begin Object Name="MaterialExpressionConstant_3"
+      R=0.450000
+      MaterialExpressionEditorX=219
+      MaterialExpressionEditorY=394
+      MaterialExpressionGuid=8E26DF7B40AF96FA2BF88DBB70A4B9C4
+      Function=MaterialFunction'ML_GlossyBlack_Latex_UE4'
+   End Object
+   Begin Object Name="MaterialExpressionConstant_24"
+      R=0.160000
+      MaterialExpressionEditorX=16
+      MaterialExpressionEditorY=288
+      MaterialExpressionGuid=93D534014E8B323419959594215C7A9D
+      Function=MaterialFunction'ML_GlossyBlack_Latex_UE4'
+   End Object
+   FunctionExpressions(0)=MaterialExpressionFunctionOutput'MaterialExpressionFunctionOutput_0'
+   FunctionExpressions(1)=MaterialExpressionMakeMaterialAttributes'MaterialExpressionMakeMaterialAttributes_0'
+   FunctionExpressions(2)=MaterialExpressionFunctionInput'MaterialExpressionFunctionInput_0'
+   FunctionExpressions(3)=MaterialExpressionMultiply'MaterialExpressionMultiply_0'
+   FunctionExpressions(4)=MaterialExpressionTextureCoordinate'MaterialExpressionTextureCoordinate_0'
+   FunctionExpressions(5)=MaterialExpressionTextureSample'MaterialExpressionTextureSample_3'
+   FunctionExpressions(6)=MaterialExpressionTextureSample'MaterialExpressionTextureSample_4'
+   FunctionExpressions(7)=MaterialExpressionMultiply'MaterialExpressionMultiply_1'
+   FunctionExpressions(8)=MaterialExpressionConstant'MaterialExpressionConstant_5'
+   FunctionExpressions(9)=MaterialExpressionFunctionInput'MaterialExpressionFunctionInput_1'
+   FunctionExpressions(10)=MaterialExpressionConstant'MaterialExpressionConstant_24'
+   FunctionExpressions(11)=MaterialExpressionConstant'MaterialExpressionConstant_3'
+   CombinedInputTypes=15
+   CombinedOutputTypes=256
+   ThumbnailInfo=SceneThumbnailInfoWithPrimitive'SceneThumbnailInfoWithPrimitive_0'
+End Object

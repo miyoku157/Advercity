@@ -1,0 +1,75 @@
+Begin Object Class=MaterialFunction Name="ML_Plastic_Shiny_Beige"
+   Begin Object Class=SceneThumbnailInfoWithPrimitive Name="SceneThumbnailInfoWithPrimitive_0"
+   End Object
+   Begin Object Class=MaterialExpressionMakeMaterialAttributes Name="MaterialExpressionMakeMaterialAttributes_0"
+   End Object
+   Begin Object Class=MaterialExpressionFunctionOutput Name="MaterialExpressionFunctionOutput_0"
+   End Object
+   Begin Object Class=MaterialExpressionFunctionInput Name="MaterialExpressionFunctionInput_4"
+   End Object
+   Begin Object Class=MaterialExpressionConstant3Vector Name="MaterialExpressionConstant3Vector_0"
+   End Object
+   Begin Object Class=MaterialExpressionConstant Name="MaterialExpressionConstant_31"
+   End Object
+   Begin Object Class=MaterialExpressionConstant Name="MaterialExpressionConstant_1"
+   End Object
+   Begin Object Name="SceneThumbnailInfoWithPrimitive_0"
+   End Object
+   Begin Object Name="MaterialExpressionMakeMaterialAttributes_0"
+      BaseColor=(Expression=MaterialExpressionFunctionInput'ML_Plastic_Shiny_Beige:MaterialExpressionFunctionInput_4')
+      Metallic=(Expression=MaterialExpressionConstant'ML_Plastic_Shiny_Beige:MaterialExpressionConstant_1')
+      Roughness=(Expression=MaterialExpressionConstant'ML_Plastic_Shiny_Beige:MaterialExpressionConstant_31')
+      AmbientOcclusion=(Mask=1,MaskR=1,MaskG=1,MaskB=1)
+      MaterialExpressionEditorX=440
+      MaterialExpressionEditorY=308
+      MaterialExpressionGuid=B6BE447B46CEBA27653F648EDC8B6F04
+      Function=MaterialFunction'ML_Plastic_Shiny_Beige'
+   End Object
+   Begin Object Name="MaterialExpressionFunctionOutput_0"
+      A=(Expression=MaterialExpressionMakeMaterialAttributes'ML_Plastic_Shiny_Beige:MaterialExpressionMakeMaterialAttributes_0')
+      bLastPreviewed=True
+      Id=9CE3E8334E850358E85C4D8B983C5493
+      MaterialExpressionEditorX=656
+      MaterialExpressionEditorY=288
+      MaterialExpressionGuid=979BF10A4E985CEAFAA06086C75A6C29
+      Function=MaterialFunction'ML_Plastic_Shiny_Beige'
+   End Object
+   Begin Object Name="MaterialExpressionFunctionInput_4"
+      Preview=(Expression=MaterialExpressionConstant3Vector'ML_Plastic_Shiny_Beige:MaterialExpressionConstant3Vector_0')
+      InputName="PlasticColor"
+      Id=5EEC4FD24395E5426FD02584D60432A6
+      MaterialExpressionEditorX=-144
+      MaterialExpressionGuid=DA11D8D5409615F8AA45E7ABC836D04D
+      Function=MaterialFunction'ML_Plastic_Shiny_Beige'
+   End Object
+   Begin Object Name="MaterialExpressionConstant3Vector_0"
+      Constant=(R=0.450000,G=0.404878,B=0.357750,A=0.000000)
+      MaterialExpressionEditorX=-440
+      MaterialExpressionEditorY=6
+      MaterialExpressionGuid=DB52C9074B98EB2E5B8A00B2DA1BB81E
+      Function=MaterialFunction'ML_Plastic_Shiny_Beige'
+   End Object
+   Begin Object Name="MaterialExpressionConstant_31"
+      R=0.050000
+      MaterialExpressionEditorX=208
+      MaterialExpressionEditorY=448
+      MaterialExpressionGuid=5A462F35485939F7382DF88EC41F2477
+      Function=MaterialFunction'ML_Plastic_Shiny_Beige'
+   End Object
+   Begin Object Name="MaterialExpressionConstant_1"
+      MaterialExpressionEditorX=112
+      MaterialExpressionEditorY=256
+      MaterialExpressionGuid=7C5BDC3D4031769AD859A9904AE9F47F
+      Function=MaterialFunction'ML_Plastic_Shiny_Beige'
+      bCollapsed=False
+   End Object
+   FunctionExpressions(0)=MaterialExpressionFunctionOutput'MaterialExpressionFunctionOutput_0'
+   FunctionExpressions(1)=MaterialExpressionMakeMaterialAttributes'MaterialExpressionMakeMaterialAttributes_0'
+   FunctionExpressions(2)=MaterialExpressionConstant'MaterialExpressionConstant_31'
+   FunctionExpressions(3)=MaterialExpressionConstant'MaterialExpressionConstant_1'
+   FunctionExpressions(4)=MaterialExpressionFunctionInput'MaterialExpressionFunctionInput_4'
+   FunctionExpressions(5)=MaterialExpressionConstant3Vector'MaterialExpressionConstant3Vector_0'
+   CombinedInputTypes=4
+   CombinedOutputTypes=256
+   ThumbnailInfo=SceneThumbnailInfoWithPrimitive'SceneThumbnailInfoWithPrimitive_0'
+End Object
