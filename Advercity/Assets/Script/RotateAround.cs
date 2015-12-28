@@ -7,7 +7,6 @@ public class RotateAround : MonoBehaviour{
 	public GameObject terrain;
 	public GameObject xRotator;
 	private float terrainHeight;
-	private float t = 0.0f;
 	private Vector2 mouseClickPosition;
 	
 	private void moveRight(){
@@ -33,18 +32,6 @@ public class RotateAround : MonoBehaviour{
 			this.transform.Translate(Vector3.up * this.speed * Time.deltaTime);
 		}
 	}
-	private void rotateCamera(){
-		if(Input.GetMouseButtonDown(1)){
-			this.mouseClickPosition = Input.mousePosition;
-		}
-		if(Input.GetMouseButton(1)){
-			Vector2 delta = this.mouseClickPosition - (Vector2)Input.mousePosition;
-			this.mouseClickPosition = Input.mousePosition;
-			this.transform.Rotate(Vector3.up * -this.speed * delta.x * Time.deltaTime);
-			this.xRotator.transform.Rotate(Vector3.right * this.speed * delta.y * Time.deltaTime);
-			this.xRotator.transform.rotation =Quaternion.Euler( ClampAngle(this.xRotator.transform.rotation.eulerAngles.x, 0.0f, 40.0f),this.xRotator.transform.rotation.eulerAngles.y,this.xRotator.transform.rotation.eulerAngles.z);
-		}
-	}
 	
 	private float ClampAngle(float angle, float min, float max) {
 		if (angle<90 || angle>270){       // if angle in the critic region...
@@ -67,7 +54,5 @@ public class RotateAround : MonoBehaviour{
 		}
 	}
 	
-	public void LateUpdate(){
-		this.rotateCamera();
-	}
+
 }

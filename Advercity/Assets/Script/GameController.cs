@@ -33,7 +33,7 @@ namespace AssemblyCSharp
 	        else if (Input.GetKeyDown(KeyCode.Mouse1))
 	        {
 	            attObj=getMousePosition();
-				if(attObj!=null){
+				if(attObj!=null&&oldSelectTarget!=null){
 					if(attObj != controller)
 					{
 						// Modifier attack pour qu'il créer une coroutine dans Being
