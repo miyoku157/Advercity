@@ -20,7 +20,6 @@ namespace AssemblyCSharp
             base.Start();
             idGroupe = 0;
 
-            StartCoroutine(base.Iainit());
         }
 
         protected override void Update()
