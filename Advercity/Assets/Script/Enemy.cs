@@ -10,14 +10,29 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Synapse.Runtime;
 namespace AssemblyCSharp
 {
     public class Enemy : Being
     {
-        protected override void Start()
+		private Brain synapseBrain;
+		int motivation = 70;
+		protected override void Start()
         {
             base.Start();
+			StartCoroutine("StartAI");
         }
+		IEnumerator StartAI(){
+			synapseBrain = new SynapseLibrary_IA.Ennemy.Perception (this) ;
+			while (Application.isPlaying&& synapseBrain!=null){
+				AIUpdate();
+				yield return new WaitForSeconds(1);
+			}
+		}
+		private void AIUpdate(){
+			if (synapseBrain.Process () == false) {
+			}
+		}
         protected override void Update()
         {
             base.Update();
@@ -26,14 +41,30 @@ namespace AssemblyCSharp
         {
             base.GetSensorPositionData(out a_position);
         }
+		protected void GetSensorPerceptionData(out int percept){
+			percept = base.perception;
+		}
+		protected void GetSensorMotivationData(out int motiv){
+			motiv = motivation;
+		}
         void OnDestroy()
         {
         }
-        protected object[] GetLayeropponentsData()
+        protected object[] GetLayerOpponentData()
         {
-            return Being.Units;
+            return GameController.Units[0].ToArray();
         }
-
+		protected void DesireInsightCallback(object opponent ){
+			Being target = opponent as Being;
+			float dist=Vector3.Distance(this.transform.position,target.transform.position);
+			if (dist < target.scope) {
+				base.launchAttack(target.gameObject);
+				isAttacking=true;
+			} else {
+				base.move(target.transform.position);
+				isAttacking=false;
+			}
+		}
     }
 }
 

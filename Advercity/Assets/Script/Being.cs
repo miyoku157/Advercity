@@ -6,7 +6,6 @@ namespace AssemblyCSharp
 {
     public abstract class Being : MonoBehaviour
     {
-        public static List<Being>[] Units;
         protected int idGroup;
         protected Brain brain;
         protected NavMeshAgent agent;
@@ -16,9 +15,9 @@ namespace AssemblyCSharp
         protected int strenght=70;
 		protected int stamina;
 		protected int intellect;
-		protected int perception;
+		protected int perception=10;
 		protected int charisma;
-		protected int scope=3;
+		public int scope=3;
 		protected Item[][] Inventaire;
 
         // Use this for initialization
@@ -30,21 +29,6 @@ namespace AssemblyCSharp
             agent = GetComponent<NavMeshAgent>();
 			//to delete
 			stamina = 100;
-        }
-        virtual protected IEnumerator Iainit()
-        {
-            while (Application.isPlaying && brain != null)
-            {
-                AIUpdate();
-                yield return new WaitForSeconds(1);
-            }
-        }
-        void AIUpdate()
-        {
-            if (brain.Process() == false)
-            {
-                target = null;
-            }
         }
         // Update is called once per frame
         virtual protected void Update()
@@ -117,7 +101,11 @@ namespace AssemblyCSharp
 
         virtual protected void GetSensorPositionData(out Vector3 a_position)
         {
-            a_position = gameObject.transform.position;
+            if (this != null) {
+				a_position = gameObject.transform.position;
+			} else {
+				a_position=Vector3.zero;
+			}
         }
     }
 }

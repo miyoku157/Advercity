@@ -1,21 +1,30 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 namespace AssemblyCSharp
 {
 	public class GameController : MonoBehaviour
 	{
 	    static GameObject controller;
+		public static List<Being>[] Units;
 	    GameObject selecttarget;
 		GameObject oldSelectTarget;
 		GameObject attObj;
 	    GameObject oldObject = null;
 	    // Use this for initialization
-	    void Start()
+	    void Awake()
 	    {
 			attObj = null;
 	        selecttarget = null;
 	        controller = this.gameObject;
 	        StartCoroutine(checkObject());
+
+			//Temporaire
+			Units = new List<Being>[2];
+			Units [0] = new List<Being> ();
+			Units [1] = new List<Being> ();
+			//Add Player or compagnon
+			Units [0].Add (GameObject.Find ("Cube").GetComponent<Being>());
 	    }
 
 	    // Update is called once per frame
