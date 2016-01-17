@@ -56,12 +56,13 @@ public class RotateAround : MonoBehaviour{
 		}
 	}
 	public void Update(){
-		this.moveRight();
-		this.moveLeft();
-		this.moveForward();
-		this.moveBackward();
+		this.moveRight ();
+		this.moveLeft ();
+		this.moveForward ();
+		this.moveBackward ();
 		getTerrainHeight ();
 		adjustToTerrainHeight ();
+		this.transform.position = new Vector3 (Mathf.Clamp (transform.position.x, 5, 795), transform.position.y, Mathf.Clamp (transform.position.z, 5, 795));
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			zoomin();
 		}
