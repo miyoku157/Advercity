@@ -18,7 +18,9 @@ public class IHM : MonoBehaviour
 	{
 	
 	}
-
+	public void credits(){
+			Application.LoadLevel ("Credits");	
+	}
 	public void launchGame(){
 			Application.LoadLevel ("Main");
 			int alea=Random.Range (0, 3);
