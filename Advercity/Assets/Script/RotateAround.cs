@@ -5,6 +5,9 @@ public class RotateAround : MonoBehaviour{
 	
 	public float speed = 5.0f;
 	private float terrainHeight;
+	public void Start(){
+		this.transform.position = GameObject.Find ("Cube").transform.position + new Vector3 (0, 50, 0);
+	}
 	private void moveRight(){
 		if(Input.mousePosition.x > Screen.width * 0.95f || Input.GetKey(KeyCode.RightArrow)){
 				this.transform.Translate(Vector3.right * this.speed * Time.deltaTime,Space.World);
@@ -30,7 +33,7 @@ public class RotateAround : MonoBehaviour{
 	}
 	private void getTerrainHeight(){
 		RaycastHit hit;
-		if (Physics.Raycast (this.transform.position, this.transform.forward,out hit, 500)) {
+		if (Physics.Raycast (this.transform.position, this.transform.forward,out hit, 500,9)) {
 			this.terrainHeight=hit.point.y;
 		}
 	}
