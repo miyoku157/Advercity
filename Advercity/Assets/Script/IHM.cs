@@ -22,7 +22,7 @@ public class IHM : MonoBehaviour
 			Application.LoadLevel ("Credits");	
 	}
 	public void launchGame(){
-			Application.LoadLevel ("Main");
+		/*	Application.LoadLevel ("Main");
 			int alea=Random.Range (0, 3);
 			GameObject player=Instantiate<GameObject>(UnityEngine.Resources.Load<GameObject> ("Prefabs/Player_character"));
 			player.transform.position = spot [alea];
@@ -33,13 +33,18 @@ public class IHM : MonoBehaviour
 				compagnon[i].transform.position=spot[alea]-i*new Vector3(10,0,10)+new Vector3(5,0,5);
 				GameController.Units[0].Add(compagnon[i].GetComponent<Being>());
 			}
+			GameObject Batiment= Instantiate<GameObject>(UnityEngine.Resources.Load<GameObject>("Prefab/Caravane"));
+			Batiment.transform.position = spot [alea] + new Vector3 (15, 0, 0);
 			for (int i=0;i<2;i++){
 				int precedent=alea;
 				alea=(precedent+1+Random.Range(0,2))%3;
-				GameObject Batiment=Instantiate<GameObject>(UnityEngine.Resources.Load<GameObject>("Prefab/Caravane"));
+				Batiment=Instantiate<GameObject>(UnityEngine.Resources.Load<GameObject>("Prefab/Caravane"));
 				Batiment.transform.position=spot[alea];
-			
-		}
+				for (int j=0; j<4;j++){
+					GameObject ennemy= Instantiate<GameObject>(UnityEngine.Resources.Load<GameObject("Prefab/Ennemy"));
+					ennemy.transform.position=spot[alea]+j*new Vector3(5,0,5);
+				}
+		}*/
 	}
 
 }
