@@ -94,7 +94,7 @@ namespace AssemblyCSharp
 	                GameController.controller.transform.position = Hit.point;
 	                return GameController.controller.gameObject;
 	            }
-	            else
+				else if(Hit.collider.tag!="Ennemy")
 	            {
 	                return Hit.collider.gameObject;
 	            }

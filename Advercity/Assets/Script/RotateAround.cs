@@ -5,9 +5,7 @@ public class RotateAround : MonoBehaviour{
 	
 	public float speed = 5.0f;
 	private float terrainHeight;
-	private float t=0.0f;
 	private void moveRight(){
-		Vector3 pos=transform.position;
 		if(Input.mousePosition.x > Screen.width * 0.95f || Input.GetKey(KeyCode.RightArrow)){
 				this.transform.Translate(Vector3.right * this.speed * Time.deltaTime,Space.World);
 		}
@@ -41,6 +39,9 @@ public class RotateAround : MonoBehaviour{
 			this.transform.position = new Vector3 (this.transform.position.x, 13 + terrainHeight, this.transform.position.z);
 		}
 		}
+	private void zoom(){
+		
+	}
 	public void Update(){
 		this.moveRight();
 		this.moveLeft();
@@ -48,6 +49,9 @@ public class RotateAround : MonoBehaviour{
 		this.moveBackward();
 		getTerrainHeight ();
 		adjustToTerrainHeight ();
+		if (Input.GetKeyDown (KeyCode.Plus)) {
+			
+		}
 		if(Input.GetKeyDown(KeyCode.Escape)){
 			Application.Quit();
 		}
