@@ -1,16 +1,24 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\IHM.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\GameController.cs">
     <Files>
-      <File FileName="Assets\Script\Character.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\Being.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\Character.cs" Line="22" Column="1" />
+      <File FileName="Assets\Script\Being.cs" Line="112" Column="38" />
       <File FileName="Assets\Script\RotateAround.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\SoundManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\IHM.cs" Line="47" Column="6" />
+      <File FileName="Assets\Script\IHM.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\Building_manager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\GameController.cs" Line="53" Column="96" />
+      <File FileName="Assets\ForestManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Class\Item.cs" Line="1" Column="1" />
+      <File FileName="Assets\Class\Resources.cs" Line="1" Column="1" />
+      <File FileName="Assets\Class\equipment.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="D:\Projet Git\Advercity\Advercity\Assets\Script\Being.cs" line="104" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

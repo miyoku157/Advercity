@@ -19,7 +19,6 @@ namespace AssemblyCSharp
         {
             base.Start();
             idGroupe = 0;
-
         }
 
         protected override void Update()

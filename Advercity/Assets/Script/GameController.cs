@@ -30,37 +30,42 @@ namespace AssemblyCSharp
 	    // Update is called once per frame
 	    void Update()
 	    {
-	        if (Input.GetKeyDown(KeyCode.Mouse0))
-	        {
-	            selecttarget = getMousePosition();
-	            if (selecttarget != null)
-	            {
-					oldSelectTarget=selecttarget;
-	                //to do
-	            }
-	        }
-	        else if (Input.GetKeyDown(KeyCode.Mouse1))
-	        {
-	            attObj=getMousePosition();
-				if(attObj!=null&&oldSelectTarget!=null){
-					if(attObj != controller)
-					{
-						// Modifier attack pour qu'il créer une coroutine dans Being
-						oldSelectTarget.GetComponent<Being>().isAttacking=true;
-						oldSelectTarget.GetComponent<Being>().launchAttack(attObj);
-					}
-					else if (controller != null)
-		            {
-						if (oldSelectTarget.GetComponent<Being>())
-		                {
-							oldSelectTarget.GetComponent<Being>().isAttacking=false;
-							oldSelectTarget.GetComponent<Being>().move(controller.transform.position);
-		                    //todo
-		                }
-		            }
+	        if (Input.GetKeyDown (KeyCode.Mouse0)) {
+				selecttarget = getMousePosition ();
+				if (selecttarget != null) {
+					oldSelectTarget = selecttarget;
+					//to do
 				}
-	        }
-
+			} else if (Input.GetKeyDown (KeyCode.Mouse1)) {
+				attObj = getMousePosition ();
+				//BUG ICI
+				if (attObj != null && oldSelectTarget != null) {
+					if (attObj != controller && attObj != oldSelectTarget && attObj.tag == "Being") {
+						// Modifier attack pour qu'il créer une coroutine dans Being
+						oldSelectTarget.GetComponent<Being> ().isAttacking = true;
+						oldSelectTarget.GetComponent<Being> ().launchAttack (attObj);
+					
+					} else if (attObj.tag == "Tree") {
+						Debug.Log(Vector3.Distance (oldSelectTarget.transform.position, attObj.transform.position));
+						if (Vector3.Distance (oldSelectTarget.transform.position, attObj.transform.position) < 10) {
+							oldSelectTarget.GetComponent<Being> ().isCollecting=true;
+							oldSelectTarget.GetComponent<Being> ().isAttacking=false;
+							oldSelectTarget.GetComponent<Being> ().launchCollect (attObj.transform.parent.gameObject);
+						} else {
+							oldSelectTarget.GetComponent<Being> ().move (attObj.transform.position);
+							oldSelectTarget.GetComponent<Being> ().isCollecting=false;
+							oldSelectTarget.GetComponent<Being> ().isAttacking=false;
+						}
+					} else if (controller != null) {
+						if (oldSelectTarget.GetComponent<Being> ()) {
+							oldSelectTarget.GetComponent<Being> ().isAttacking = false;
+							oldSelectTarget.GetComponent<Being> ().isCollecting=false;
+							oldSelectTarget.GetComponent<Being> ().move (controller.transform.position);
+							//todo
+						}
+					}
+				}
+			}
 	    }
 	    private IEnumerator checkObject()
 	    {
@@ -88,7 +93,7 @@ namespace AssemblyCSharp
 	        RaycastHit Hit;
 	        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 	        if (Physics.Raycast(ray, out Hit, 1000))
-	        {// modifier la distance finalel
+	        {// modifier la distance finale
 	            if (Hit.collider.tag == "Map")
 	            {
 	                GameController.controller.transform.position = Hit.point;

@@ -49,6 +49,7 @@
      <Compile Include="Assets\Class\Resources.cs" />
      <Compile Include="Assets\Class\Skill.cs" />
      <Compile Include="Assets\Class\equipment.cs" />
+     <Compile Include="Assets\ForestManager.cs" />
      <Compile Include="Assets\Resources\Rocks Pack\Standard Assets\Image Effects (Pro Only)\BlurEffect.cs" />
      <Compile Include="Assets\Resources\Rocks Pack\Standard Assets\Image Effects (Pro Only)\ColorCorrectionEffect.cs" />
      <Compile Include="Assets\Resources\Rocks Pack\Standard Assets\Image Effects (Pro Only)\ContrastStretchEffect.cs" />

@@ -10,6 +10,7 @@ namespace AssemblyCSharp
         protected Brain brain;
         protected NavMeshAgent agent;
 
+		public bool isCollecting = false;
 		public bool isAttacking = false;
         protected Being target;
         protected int strenght=70;
@@ -96,7 +97,32 @@ namespace AssemblyCSharp
 				yield return new WaitForSeconds(0.5f);
 			}
 		}
-
+		virtual public void launchCollect(GameObject Gobject){
+			StartCoroutine ("collect",Gobject);
+		}
+		virtual protected IEnumerator collect(GameObject Gobject){
+			while (Gobject!=null&&isCollecting) {
+				//animation collect
+				for(int i=0;i<20;i++){
+					if(Inventaire[1][i]!=null){
+						if(Gobject.tag=="Tree"){
+							Inventaire[1][i]=new Resources("Bois","UI/Wood_icon",5);
+						}else if(Gobject.tag=="Metal"){
+							Inventaire[1][i]=new Resources("Métal","UI/17",5);
+						}else if (Gobject.tag=="Food"){
+							Inventaire[1][i]=new Resources("Bois","UI/food_chicken_thig-512",5);
+						}else if(Gobject.tag=="Water"){
+							Inventaire[1][i]=new Resources("Bois","UI/Water-drops1",5);
+						}else{
+							Inventaire[1][i]=new Resources("Bois","UI/large",2);
+						}
+					}
+				}
+				Gobject.GetComponent<ForestManager>().HP-=5;
+				Debug.Log("recolte");
+				yield return new WaitForSeconds(5);
+			}
+		}
 
 
         virtual protected void GetSensorPositionData(out Vector3 a_position)

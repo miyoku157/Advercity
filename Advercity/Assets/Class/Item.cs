@@ -13,11 +13,12 @@ namespace AssemblyCSharp
 	public abstract class Item
     {
 		protected string name;
-		//image
+		protected string path;
 
-        public Item()
+        public Item(string _name, string _path)
         {
-
+			name = _name;
+			path = _path;
 
         }
 

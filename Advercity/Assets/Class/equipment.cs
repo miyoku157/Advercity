@@ -16,9 +16,11 @@ namespace AssemblyCSharp
 		public int bonus;
 		public int bonusScope;
 
-        public equipment()
+        public equipment(string _name,string _path,int _damage, int _bonus, int _bonusScope):base( _name,_path)
         {
-
+			damage = _damage;
+			bonus = _bonus;
+			bonusScope = _bonusScope;
         }
     }
 }
