@@ -5,6 +5,8 @@ public class RotateAround : MonoBehaviour{
 	
 	public float speed = 5.0f;
 	private float terrainHeight;
+	private float dist=13.0f;
+	private bool zoom = false;
 	public void Start(){
 		this.transform.position = GameObject.Find ("Cube").transform.position + new Vector3 (0, 50, 0);
 	}
@@ -38,12 +40,20 @@ public class RotateAround : MonoBehaviour{
 		}
 	}
 	private void adjustToTerrainHeight(){
-		if (terrainHeight-13  != this.terrainHeight) {
-			this.transform.position = new Vector3 (this.transform.position.x, 13 + terrainHeight, this.transform.position.z);
+		if (terrainHeight-dist  != this.terrainHeight) {
+			this.transform.position = new Vector3 (this.transform.position.x, dist + terrainHeight, this.transform.position.z);
 		}
 		}
-	private void zoom(){
-		
+	private void zoomin(){
+		if (!zoom) {
+			this.transform.position = this.transform.position - new Vector3 (0, 20, 0);
+			zoom=true;
+			dist+=20;
+		} else {
+			this.transform.position = this.transform.position + new Vector3 (0, 20, 0);
+			zoom=false;
+			dist-=20;
+		}
 	}
 	public void Update(){
 		this.moveRight();
@@ -52,8 +62,8 @@ public class RotateAround : MonoBehaviour{
 		this.moveBackward();
 		getTerrainHeight ();
 		adjustToTerrainHeight ();
-		if (Input.GetKeyDown (KeyCode.Plus)) {
-			
+		if (Input.GetKeyDown (KeyCode.Space)) {
+			zoomin();
 		}
 		if(Input.GetKeyDown(KeyCode.Escape)){
 			Application.Quit();
