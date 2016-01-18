@@ -51,10 +51,6 @@ namespace AssemblyCSharp
 							oldSelectTarget.GetComponent<Being> ().isCollecting=true;
 							oldSelectTarget.GetComponent<Being> ().isAttacking=false;
 							oldSelectTarget.GetComponent<Being> ().launchCollect (attObj.transform.parent.gameObject);
-						} else {
-							oldSelectTarget.GetComponent<Being> ().move (attObj.transform.position);
-							oldSelectTarget.GetComponent<Being> ().isCollecting=false;
-							oldSelectTarget.GetComponent<Being> ().isAttacking=false;
 						}
 					} else if (controller != null) {
 						if (oldSelectTarget.GetComponent<Being> ()) {
@@ -79,7 +75,11 @@ namespace AssemblyCSharp
 	            }
 	            if (Physics.Raycast(ray, out Hit, 100))
 	            {// modifier la distance finalel
-	                if (Hit.collider.tag != "Map")
+	                if(Hit.collider.tag=="Tree"){
+//						Hit.collider.transform.parent.gameObject.GetComponent<Renderer>().material.color=Color.red;
+						oldObject=Hit.collider.gameObject;
+					}
+					else if (Hit.collider.tag != "Map")
 	                {
 	                    Hit.collider.gameObject.GetComponent<Renderer>().material.color = Color.red;
 	                    oldObject = Hit.collider.gameObject;

@@ -48,7 +48,13 @@ public class IHM : MonoBehaviour
 
 			}
 	}
-
+	public void openCompagnon(){
+		
+	}
+	public void openInventaire(){
+	}
+	public void openVille(){
+	}
 }
 
 }

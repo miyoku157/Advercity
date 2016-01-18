@@ -103,24 +103,30 @@ namespace AssemblyCSharp
 		virtual protected IEnumerator collect(GameObject Gobject){
 			while (Gobject!=null&&isCollecting) {
 				//animation collect
-				for(int i=0;i<20;i++){
-					if(Inventaire[1][i]!=null){
-						if(Gobject.tag=="Tree"){
-							Inventaire[1][i]=new Resources("Bois","UI/Wood_icon",5);
-						}else if(Gobject.tag=="Metal"){
-							Inventaire[1][i]=new Resources("Métal","UI/17",5);
-						}else if (Gobject.tag=="Food"){
-							Inventaire[1][i]=new Resources("Bois","UI/food_chicken_thig-512",5);
-						}else if(Gobject.tag=="Water"){
-							Inventaire[1][i]=new Resources("Bois","UI/Water-drops1",5);
-						}else{
-							Inventaire[1][i]=new Resources("Bois","UI/large",2);
+				if (Vector3.Distance(Gobject.transform.position, this.transform.position) >3)
+				{
+					move(Gobject.transform.position);
+				}
+				else{
+					for(int i=0;i<20;i++){
+						if(Inventaire[1][i]!=null){
+							if(Gobject.tag=="Tree"){
+								Inventaire[1][i]=new Resources("Bois","UI/Wood_icon",5);
+							}else if(Gobject.tag=="Metal"){
+								Inventaire[1][i]=new Resources("Métal","UI/17",5);
+							}else if (Gobject.tag=="Food"){
+								Inventaire[1][i]=new Resources("Bois","UI/food_chicken_thig-512",5);
+							}else if(Gobject.tag=="Water"){
+								Inventaire[1][i]=new Resources("Bois","UI/Water-drops1",5);
+							}else{
+								Inventaire[1][i]=new Resources("Bois","UI/large",2);
+							}
 						}
 					}
+					Gobject.GetComponent<ForestManager>().HP-=5;
+					Debug.Log("recolte");
+					yield return new WaitForSeconds(5);
 				}
-				Gobject.GetComponent<ForestManager>().HP-=5;
-				Debug.Log("recolte");
-				yield return new WaitForSeconds(5);
 			}
 		}
 
