@@ -37,7 +37,8 @@ namespace AssemblyCSharp
 						selecttarget.GetComponent<Renderer> ().material.color = Color.white;
 						oldSelectTarget = selecttarget;
 						oldSelectTarget.GetComponent<Renderer> ().material.color = Color.green;
-						//to do
+					selecttarget=null;	
+					//to do
 					}
 				} else if (Input.GetKeyDown (KeyCode.Mouse1)) {
 					attObj = getMousePosition ();
@@ -102,7 +103,7 @@ namespace AssemblyCSharp
 	                    oldObject = Hit.collider.gameObject;
 	                }
 	            }
-	            yield return new WaitForSeconds(0.1f);
+	            yield return new WaitForSeconds(0.15f);
 	        }
 	    }
 	    public static GameObject getMousePosition()

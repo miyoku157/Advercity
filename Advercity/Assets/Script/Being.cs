@@ -9,7 +9,7 @@ namespace AssemblyCSharp
         protected int idGroup;
         protected Brain brain;
         protected NavMeshAgent agent;
-
+		public GameObject city;
 		public bool isCollecting = false;
 		public bool isAttacking = false;
         protected Being target;
@@ -30,6 +30,7 @@ namespace AssemblyCSharp
             agent = GetComponent<NavMeshAgent>();
 			//to delete
 			stamina = 100;
+			city = GameObject.Find ("Centre ville");
         }
         // Update is called once per frame
         virtual protected void Update()
@@ -109,6 +110,8 @@ namespace AssemblyCSharp
 					move(Gobject.transform.position);
 				}
 				else{
+					int hp=Gobject.transform.parent.GetComponent<ResourcesManager>().HP;
+					hp-=5;
 					for(int i=0;i<20;i++){
 						if(Inventaire[1][i]!=null){
 							if(Gobject.tag=="Tree"&&isFull){
@@ -123,18 +126,20 @@ namespace AssemblyCSharp
 							}else if(Gobject.tag=="Water"&&isFull){
 								Inventaire[1][i]=new Resources("Eau","UI/Water-drops1",5);
 								isFull=false;
-							}else if(isFull){
+							}else if(Gobject.tag=="Xeno"&&isFull){
 								Inventaire[1][i]=new Resources("Xenonium","UI/large",2);
 								isFull=false;
 							}
-							if(isFull){
-								this.isCollecting=false;
-							}
+
 						}
 					}
-					Gobject.transform.parent.GetComponent<ResourcesManager>().HP-=5;
+					if(hp<=0){
+						this.isCollecting=false;
+						move(city.transform.position);
+					}
+					Gobject.transform.parent.GetComponent<ResourcesManager>().HP=hp;
 				}
-				yield return new WaitForSeconds(5);
+				yield return new WaitForSeconds(0.1f);
 
 			}
 		}
