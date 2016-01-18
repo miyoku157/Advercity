@@ -1,9 +1,11 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 namespace AssemblyCSharp{
 public class IHM : MonoBehaviour
 {
 	public static Vector3[] spot;
+		private GameObject caracterPanel;
 	// Use this for initialization
 	void Start ()
 	{
@@ -11,6 +13,7 @@ public class IHM : MonoBehaviour
 		spot [0] = new Vector3 (150, 150, 625);
 		spot [1] = new Vector3 (650, 140, 583);
 		spot [2] = new Vector3 (700, 150, 100);
+			caracterPanel = GameObject.Find ("ImageCadre");
 	}
 	
 	// Update is called once per frame
@@ -48,9 +51,23 @@ public class IHM : MonoBehaviour
 
 			}
 	}
+		public void closeCompagnon(){
+			caracterPanel.SetActive(false);
+		}
 	public void openCompagnon(){
-		
-	}
+			if (caracterPanel.activeSelf) {
+				caracterPanel.SetActive(false);
+			} else {
+				caracterPanel.SetActive(true);
+				caracterPanel.transform.GetChild(2).GetComponent<Text>().text="Force : "+ GameController.Units[0][0].strenght; 
+				caracterPanel.transform.GetChild(3).GetComponent<Text>().text="Endurance : "+ GameController.Units[0][0].stamina; 
+				caracterPanel.transform.GetChild(4).GetComponent<Text>().text="Intelligence : "+ GameController.Units[0][0].intellect; 
+				caracterPanel.transform.GetChild(5).GetComponent<Text>().text="Perception : "+ GameController.Units[0][0].perception; 
+				caracterPanel.transform.GetChild(6).GetComponent<Text>().text="Charisme : "+ GameController.Units[0][0].charisma; 
+				caracterPanel.transform.GetChild(7).GetComponent<Text>().text="Portée : "+ GameController.Units[0][0].scope; 
+
+			}
+			}
 	public void openInventaire(){
 	}
 	public void openVille(){

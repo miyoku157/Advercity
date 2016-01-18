@@ -13,11 +13,11 @@ namespace AssemblyCSharp
 		public bool isCollecting = false;
 		public bool isAttacking = false;
         protected Being target;
-        protected int strenght=70;
-		protected int stamina;
-		protected int intellect;
-		protected int perception=10;
-		protected int charisma;
+		public int strenght=70;
+		public int stamina;
+		public int intellect;
+		public int perception=10;
+		public int charisma;
 		public int scope=3;
 		protected Item[][] Inventaire;
 
@@ -132,7 +132,6 @@ namespace AssemblyCSharp
 							}
 						}
 					}
-					Debug.Log("recolte");
 					Gobject.transform.parent.GetComponent<ResourcesManager>().HP-=5;
 				}
 				yield return new WaitForSeconds(5);
