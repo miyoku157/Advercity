@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ForestManager : MonoBehaviour {
+public class ResourcesManager : MonoBehaviour {
 	public int HP;
 	// Use this for initialization
 	void Start () {
