@@ -72,6 +72,10 @@ public class IHM : MonoBehaviour
 	}
 	public void openVille(){
 	}
+		public void selectPlayer(){
+			Camera.main.transform.position = GameController.Units [0] [0].transform.position+new Vector3(0,40,0);
+			GameController.selecttarget=GameController.Units [0] [0].gameObject;
+		}
 }
 
 }

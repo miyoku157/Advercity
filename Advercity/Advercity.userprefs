@@ -1,9 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\IHM.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\GameController.cs">
     <Files>
-      <File FileName="Assets\Script\IHM.cs" Line="61" Column="35" />
-      <File FileName="Assets\Script\Being.cs" Line="17" Column="22" />
+      <File FileName="Assets\Script\IHM.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\Being.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\Character.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\RotateAround.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\SoundManager.cs" Line="1" Column="1" />
@@ -11,7 +11,7 @@
       <File FileName="Assets\ResourcesManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Class\Resources.cs" Line="1" Column="1" />
       <File FileName="Assets\Class\equipment.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\GameController.cs" Line="55" Column="21" />
+      <File FileName="Assets\Script\GameController.cs" Line="33" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

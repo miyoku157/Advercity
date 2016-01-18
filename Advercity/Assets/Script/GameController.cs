@@ -7,7 +7,7 @@ namespace AssemblyCSharp
 	{
 	    static GameObject controller;
 		public static List<Being>[] Units;
-	    GameObject selecttarget;
+		public static  GameObject selecttarget;
 		GameObject oldSelectTarget;
 		GameObject attObj;
 	    GameObject oldObject = null;
@@ -30,35 +30,39 @@ namespace AssemblyCSharp
 	    // Update is called once per frame
 	    void Update()
 	    {
-	        if (Input.GetKeyDown (KeyCode.Mouse0)) {
-				selecttarget = getMousePosition ();
-				if (selecttarget != null) {
-					oldSelectTarget = selecttarget;
-					//to do
-				}
-			} else if (Input.GetKeyDown (KeyCode.Mouse1)) {
-				attObj = getMousePosition ();
-				if (attObj != null && oldSelectTarget != null) {
-					if (attObj != controller &&!oldSelectTarget.GetComponent<Being>().isAttacking&& attObj != oldSelectTarget && attObj.tag == "Being") {
-						oldSelectTarget.GetComponent<Being> ().isAttacking = true;
-						oldSelectTarget.GetComponent<Being> ().isCollecting = false;
-						oldSelectTarget.GetComponent<Being> ().launchAttack (attObj);
+			//if (!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) {
+				if (Input.GetKeyDown (KeyCode.Mouse0)) {
+					selecttarget = getMousePosition ();
+					if (selecttarget != null) {
+						selecttarget.GetComponent<Renderer> ().material.color = Color.white;
+						oldSelectTarget = selecttarget;
+						oldSelectTarget.GetComponent<Renderer> ().material.color = Color.green;
+						//to do
+					}
+				} else if (Input.GetKeyDown (KeyCode.Mouse1)) {
+					attObj = getMousePosition ();
+					if (attObj != null && oldSelectTarget != null) {
+						if (attObj != controller && !oldSelectTarget.GetComponent<Being> ().isAttacking && attObj != oldSelectTarget && attObj.tag == "Being") {
+							oldSelectTarget.GetComponent<Being> ().isAttacking = true;
+							oldSelectTarget.GetComponent<Being> ().isCollecting = false;
+							oldSelectTarget.GetComponent<Being> ().launchAttack (attObj);
 					
-					} else if (attObj.tag == "Tree"&&!oldSelectTarget.GetComponent<Being>().isCollecting) {
-						oldSelectTarget.GetComponent<Being> ().isCollecting=true;
-						oldSelectTarget.GetComponent<Being> ().isAttacking=false;
-						oldSelectTarget.GetComponent<Being> ().launchCollect (attObj);
-
-					} else if (controller != null&&attObj.tag!="Tree") {
-						if (oldSelectTarget.GetComponent<Being> ()) {
+						} else if (attObj.tag == "Tree" && !oldSelectTarget.GetComponent<Being> ().isCollecting) {
+							oldSelectTarget.GetComponent<Being> ().isCollecting = true;
 							oldSelectTarget.GetComponent<Being> ().isAttacking = false;
-							oldSelectTarget.GetComponent<Being> ().isCollecting=false;
-							oldSelectTarget.GetComponent<Being> ().move (controller.transform.position);
-							//todo
+							oldSelectTarget.GetComponent<Being> ().launchCollect (attObj);
+
+						} else if (controller != null && attObj.tag != "Tree") {
+							if (oldSelectTarget.GetComponent<Being> ()) {
+								oldSelectTarget.GetComponent<Being> ().isAttacking = false;
+								oldSelectTarget.GetComponent<Being> ().isCollecting = false;
+								oldSelectTarget.GetComponent<Being> ().move (controller.transform.position);
+								//todo
+							}
 						}
 					}
 				}
-			}
+			//}
 	    }
 	    private IEnumerator checkObject()
 	    {
@@ -81,6 +85,7 @@ namespace AssemblyCSharp
 	            }
 	            if (Physics.Raycast(ray, out Hit, 100))
 	            {// modifier la distance finalel
+
 	                if(Hit.collider.tag=="Tree"){
 						GameObject parent=Hit.collider.transform.parent.gameObject;
 						Renderer[] renderers=parent.GetComponentsInChildren<Renderer>();
@@ -89,6 +94,7 @@ namespace AssemblyCSharp
 							renderers[i].material.color=Color.red;
 						}
 						oldObject=Hit.collider.gameObject;
+
 					}
 					else if (Hit.collider.tag != "Map")
 	                {
@@ -96,7 +102,7 @@ namespace AssemblyCSharp
 	                    oldObject = Hit.collider.gameObject;
 	                }
 	            }
-	            yield return new WaitForSeconds(0.15f);
+	            yield return new WaitForSeconds(0.1f);
 	        }
 	    }
 	    public static GameObject getMousePosition()
