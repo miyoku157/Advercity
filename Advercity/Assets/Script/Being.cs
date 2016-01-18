@@ -12,6 +12,8 @@ namespace AssemblyCSharp
 		public GameObject city;
 		public bool isCollecting = false;
 		public bool isAttacking = false;
+		public bool isGoing = false;
+
         protected Being target;
 		public int strenght=70;
 		public int stamina;
@@ -19,7 +21,7 @@ namespace AssemblyCSharp
 		public int perception=10;
 		public int charisma;
 		public int scope=3;
-		protected Item[][] Inventaire;
+		public Item[][] Inventaire;
 
         // Use this for initialization
         virtual protected void Start()
@@ -102,9 +104,12 @@ namespace AssemblyCSharp
 			StartCoroutine ("collect",Gobject);
 		}
 		virtual protected IEnumerator collect(GameObject Gobject){
-			bool isFull = true;
 			while (Gobject!=null&&isCollecting) {
+				bool isFull = true;
 				//animation collect
+				while(isGoing){
+					yield return new WaitForSeconds(1);
+				}
 				if (Vector3.Distance(Gobject.transform.position, this.transform.position) >3)
 				{
 					move(Gobject.transform.position);
@@ -113,33 +118,33 @@ namespace AssemblyCSharp
 					int hp=Gobject.transform.parent.GetComponent<ResourcesManager>().HP;
 					hp-=5;
 					for(int i=0;i<20;i++){
-						if(Inventaire[1][i]!=null){
-							if(Gobject.tag=="Tree"&&isFull){
+						if(Inventaire[1][i]==null&&isFull){
+							if(Gobject.tag=="Tree"){
 								isFull=false;
-								Inventaire[1][i]=new Resources("Bois","UI/Wood_icon",5);
-							}else if(Gobject.tag=="Metal"&&isFull){
-								Inventaire[1][i]=new Resources("Métal","UI/17",5);
+								Inventaire[1][i]=new Resources("Bois","UI/Wood_icon",1,5);
+							}else if(Gobject.tag=="Metal"){
+								Inventaire[1][i]=new Resources("Métal","UI/17",1,5);
 								isFull=false;
-							}else if (Gobject.tag=="Food"&&isFull){
-								Inventaire[1][i]=new Resources("Nourriture","UI/food_chicken_thig-512",5);
+							}else if (Gobject.tag=="Food"){
+								Inventaire[1][i]=new Resources("Nourriture","UI/food_chicken_thig-512",1,5);
 								isFull=false;
-							}else if(Gobject.tag=="Water"&&isFull){
-								Inventaire[1][i]=new Resources("Eau","UI/Water-drops1",5);
+							}else if(Gobject.tag=="Water"){
+								Inventaire[1][i]=new Resources("Eau","UI/Water-drops1",1,5);
 								isFull=false;
-							}else if(Gobject.tag=="Xeno"&&isFull){
-								Inventaire[1][i]=new Resources("Xenonium","UI/large",2);
+							}else if(Gobject.tag=="Xeno"){
+								Inventaire[1][i]=new Resources("Xenonium","UI/large",1,2);
 								isFull=false;
 							}
 
 						}
 					}
-					if(hp<=0){
-						this.isCollecting=false;
+					if(isFull|| hp<=0){
+						isGoing=true;
 						move(city.transform.position);
 					}
 					Gobject.transform.parent.GetComponent<ResourcesManager>().HP=hp;
 				}
-				yield return new WaitForSeconds(0.1f);
+				yield return new WaitForSeconds(2);
 
 			}
 		}

@@ -12,14 +12,14 @@ namespace AssemblyCSharp
 {
 	public abstract class Item
     {
-		protected string name;
+		public string name;
 		protected string path;
-
-        public Item(string _name, string _path)
+		public int type;
+        public Item(string _name, string _path,int _type)
         {
 			name = _name;
 			path = _path;
-
+			type = _type;
         }
 
     }
