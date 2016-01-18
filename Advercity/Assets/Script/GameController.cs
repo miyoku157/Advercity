@@ -38,21 +38,18 @@ namespace AssemblyCSharp
 				}
 			} else if (Input.GetKeyDown (KeyCode.Mouse1)) {
 				attObj = getMousePosition ();
-				//BUG ICI
 				if (attObj != null && oldSelectTarget != null) {
-					if (attObj != controller && attObj != oldSelectTarget && attObj.tag == "Being") {
-						// Modifier attack pour qu'il créer une coroutine dans Being
+					if (attObj != controller &&!oldSelectTarget.GetComponent<Being>().isAttacking&& attObj != oldSelectTarget && attObj.tag == "Being") {
 						oldSelectTarget.GetComponent<Being> ().isAttacking = true;
+						oldSelectTarget.GetComponent<Being> ().isCollecting = false;
 						oldSelectTarget.GetComponent<Being> ().launchAttack (attObj);
 					
-					} else if (attObj.tag == "Tree") {
-						Debug.Log(Vector3.Distance (oldSelectTarget.transform.position, attObj.transform.position));
-						if (Vector3.Distance (oldSelectTarget.transform.position, attObj.transform.position) < 10) {
-							oldSelectTarget.GetComponent<Being> ().isCollecting=true;
-							oldSelectTarget.GetComponent<Being> ().isAttacking=false;
-							oldSelectTarget.GetComponent<Being> ().launchCollect (attObj.transform.parent.gameObject);
-						}
-					} else if (controller != null) {
+					} else if (attObj.tag == "Tree"&&!oldSelectTarget.GetComponent<Being>().isCollecting) {
+						oldSelectTarget.GetComponent<Being> ().isCollecting=true;
+						oldSelectTarget.GetComponent<Being> ().isAttacking=false;
+						oldSelectTarget.GetComponent<Being> ().launchCollect (attObj);
+
+					} else if (controller != null&&attObj.tag!="Tree") {
 						if (oldSelectTarget.GetComponent<Being> ()) {
 							oldSelectTarget.GetComponent<Being> ().isAttacking = false;
 							oldSelectTarget.GetComponent<Being> ().isCollecting=false;
@@ -71,12 +68,26 @@ namespace AssemblyCSharp
 	            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 	            if (oldObject != null)
 	            {
-	                oldObject.GetComponent<Renderer>().material.color = Color.white;
+					if(oldObject.tag=="Tree"){
+						GameObject parent=oldObject.transform.parent.gameObject;
+						Renderer[] renderers=parent.GetComponentsInChildren<Renderer>();
+						int lenght= renderers.GetLength(0);
+						for(int i=0;i<lenght;i++){
+							renderers[i].material.color=Color.white;
+						}
+					}else{
+	                	oldObject.GetComponent<Renderer>().material.color = Color.white;
+					}
 	            }
 	            if (Physics.Raycast(ray, out Hit, 100))
 	            {// modifier la distance finalel
 	                if(Hit.collider.tag=="Tree"){
-//						Hit.collider.transform.parent.gameObject.GetComponent<Renderer>().material.color=Color.red;
+						GameObject parent=Hit.collider.transform.parent.gameObject;
+						Renderer[] renderers=parent.GetComponentsInChildren<Renderer>();
+						int lenght= renderers.GetLength(0);
+						for(int i=0;i<lenght;i++){
+							renderers[i].material.color=Color.red;
+						}
 						oldObject=Hit.collider.gameObject;
 					}
 					else if (Hit.collider.tag != "Map")
