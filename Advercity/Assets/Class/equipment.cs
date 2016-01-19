@@ -12,15 +12,18 @@ namespace AssemblyCSharp
 {
     public class equipment : Item
     {
+		//0 arme; 1 armure
+		public int typeEquip;
 		public int damage;
 		public int bonus;
 		public int bonusScope;
 
-        public equipment(string _name,string _path,int _type,int _damage, int _bonus, int _bonusScope):base( _name,_path,_type)
+        public equipment(string _name,string _path,int _type,int _damage, int _bonus, int _bonusScope, int _typeEquip):base( _name,_path,_type)
         {
 			damage = _damage;
 			bonus = _bonus;
 			bonusScope = _bonusScope;
+			typeEquip = _typeEquip;
         }
     }
 }

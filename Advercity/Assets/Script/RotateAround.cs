@@ -11,25 +11,25 @@ public class RotateAround : MonoBehaviour{
 		this.transform.position = GameObject.Find ("Cube").transform.position + new Vector3 (0, 50, 0);
 	}
 	private void moveRight(){
-		if(Input.mousePosition.x > Screen.width * 0.95f || Input.GetKey(KeyCode.RightArrow)){
+		if(Input.mousePosition.x > Screen.width * 0.98f || Input.GetKey(KeyCode.RightArrow)){
 				this.transform.Translate(Vector3.right * this.speed * Time.deltaTime,Space.World);
 		}
 	}
 	
 	private void moveLeft(){
-		if(Input.mousePosition.x < Screen.width * 0.05f || Input.GetKey(KeyCode.LeftArrow)){
+		if(Input.mousePosition.x < Screen.width * 0.02f || Input.GetKey(KeyCode.LeftArrow)){
 			this.transform.Translate(-Vector3.right * this.speed * Time.deltaTime,Space.World);
 		}
 	}
 	
 	private void moveForward(){
-		if(Input.mousePosition.y < Screen.height * 0.05f || Input.GetKey(KeyCode.DownArrow)){
+		if(Input.mousePosition.y < Screen.height * 0.02f || Input.GetKey(KeyCode.DownArrow)){
 			this.transform.Translate(-Vector3.forward * this.speed * Time.deltaTime,Space.World);
 		}
 	}
 	
 	private void moveBackward(){
-		if(Input.mousePosition.y > Screen.height * 0.95f || Input.GetKey(KeyCode.UpArrow)){
+		if(Input.mousePosition.y > Screen.height * 0.98f || Input.GetKey(KeyCode.UpArrow)){
 			this.transform.Translate(Vector3.forward * this.speed * Time.deltaTime,Space.World);
 		}
 	}

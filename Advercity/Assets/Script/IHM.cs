@@ -6,6 +6,10 @@ public class IHM : MonoBehaviour
 {
 	public static Vector3[] spot;
 		private GameObject caracterPanel;
+		private GameObject inventory;
+		private GameObject downWeapon;
+		private GameObject downArmor;
+		private int equip;
 	// Use this for initialization
 	void Start ()
 	{
@@ -13,7 +17,13 @@ public class IHM : MonoBehaviour
 		spot [0] = new Vector3 (150, 150, 625);
 		spot [1] = new Vector3 (650, 140, 583);
 		spot [2] = new Vector3 (700, 150, 100);
-			caracterPanel = GameObject.Find ("ImageCadre");
+		caracterPanel = GameObject.Find ("ImageCadrePersonnage");
+		inventory = GameObject.Find ("ImageCadreInventaire");
+		caracterPanel.SetActive (false);
+		inventory.SetActive (false);
+		downWeapon=inventory.transform.GetChild(4).gameObject;
+		downArmor=inventory.transform.GetChild(5).gameObject;
+
 	}
 	
 	// Update is called once per frame
@@ -58,6 +68,9 @@ public class IHM : MonoBehaviour
 		public void closeCompagnon(){
 			caracterPanel.SetActive(false);
 		}
+		public void closeInventaire(){
+			inventory.SetActive (false);
+		}
 	public void openCompagnon(){
 			if (caracterPanel.activeSelf) {
 				caracterPanel.SetActive(false);
@@ -73,7 +86,56 @@ public class IHM : MonoBehaviour
 			}
 			}
 	public void openInventaire(){
-	}
+			if (!inventory.activeSelf) {
+				Item[][] inv = GameController.Units [0] [0].Inventaire;
+				inventory.SetActive (true);
+				readInventaire (inv);
+			} else {
+				for(int i=1;i<=20;i++){
+					GameObject.Find("Text ("+i+")").GetComponent<Text>().text="";
+				}
+				downArmor.transform.GetChild(0).GetComponent<Text>().text="";
+				downWeapon.transform.GetChild(0).GetComponent<Text>().text="";
+				inventory.SetActive(false);
+
+
+			}
+		}
+	private void readInventaire(Item[][] inv){
+			int j = 1;
+			for(int i=0;i<2;i++){
+				j=1;
+				foreach(Item element in inv[i]){
+					Text obj=GameObject.Find("Text ("+j+")").GetComponent<Text>();
+					if(element!=null){
+						if(element.type==0){
+							AssemblyCSharp.equipment temp=(AssemblyCSharp.equipment)element;
+							if(temp.typeEquip==0){
+								downWeapon.GetComponent<Dropdown>().options.Add(new Dropdown.OptionData(temp.name));
+							}else{
+								downArmor.GetComponent<Dropdown>().options.Add(new Dropdown.OptionData(temp.name));
+							}
+							obj.text="Equipement : "+ temp.name+" Dommage : "+ temp.damage+ " Portée : "+ temp.bonusScope ;
+						}else{
+							AssemblyCSharp.Resources temp=(AssemblyCSharp.Resources)element;
+							obj.text="Ressource : "+ temp.name+" Quantité : "+ temp.nb;
+						}
+						j+=1;
+					}
+					else{
+						obj.text="";
+					}
+				}
+			}
+		}
+	public void changeArmor(int equip){
+			string name=downArmor.GetComponent<Dropdown>().options[equip].text;
+			downArmor.transform.GetChild (0).GetComponent<Text> ().text = name;
+		}
+	public void changeWeapon(int equip){
+			string name=downWeapon.GetComponent<Dropdown>().options[equip].text;
+			downWeapon.transform.GetChild (0).GetComponent<Text> ().text = name;
+		}
 	public void openVille(){
 	}
 		public void selectPlayer(){
