@@ -46,7 +46,7 @@ ENDCG
 			Tags { "LightMode" = "Always" }
 			Cull Off
 			ZWrite Off
- 
+ 			ztest always
 			// you can choose what kind of blending mode you want for the outline
 			Blend SrcAlpha OneMinusSrcAlpha // Normal
 			//Blend One One // Additive
@@ -91,7 +91,7 @@ ENDCG
 			Cull Front
 			ZWrite Off
 			Offset 15,15
- 
+ 			ztest always
 			// you can choose what kind of blending mode you want for the outline
 			Blend SrcAlpha OneMinusSrcAlpha // Normal
 			//Blend One One // Additive

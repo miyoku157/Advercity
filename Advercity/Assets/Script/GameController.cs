@@ -53,12 +53,12 @@ namespace AssemblyCSharp
 							oldSelectTarget.GetComponent<Being> ().isCollecting = false;
 							oldSelectTarget.GetComponent<Being> ().launchAttack (attObj);
 					
-						} else if (attObj.tag == "Tree" && !oldSelectTarget.GetComponent<Being> ().isCollecting) {
+						} else if (attObj.layer==LayerMask.NameToLayer("Resources") && !oldSelectTarget.GetComponent<Being> ().isCollecting) {
 							oldSelectTarget.GetComponent<Being> ().isCollecting = true;
 							oldSelectTarget.GetComponent<Being> ().isAttacking = false;
 							oldSelectTarget.GetComponent<Being> ().launchCollect (attObj);
 
-						} else if (controller != null && attObj.tag != "Tree") {
+						} else if (controller != null && attObj.layer != LayerMask.NameToLayer("Resources")) {
 							if (oldSelectTarget.GetComponent<Being> ()) {
 								oldSelectTarget.GetComponent<Being> ().isAttacking = false;
 								oldSelectTarget.GetComponent<Being> ().isCollecting = false;
@@ -92,7 +92,7 @@ namespace AssemblyCSharp
 	            if (Physics.Raycast(ray, out Hit, 100))
 	            {// modifier la distance finalel
 
-	                if(Hit.collider.tag=="Tree"){
+	                if(Hit.collider.tag=="Tree"||Hit.collider.tag=="Xenonium"){
 						GameObject parent=Hit.collider.transform.parent.gameObject;
 						Renderer[] renderers=parent.GetComponentsInChildren<Renderer>();
 						int lenght= renderers.GetLength(0);

@@ -15,5 +15,7 @@ public class ResourcesManager : MonoBehaviour {
 			GameObject.Destroy(this.gameObject);
 		}
 	}
-
+	void OnTriggerEnter(Collider coll){
+		//launch animcollect
+	}
 }

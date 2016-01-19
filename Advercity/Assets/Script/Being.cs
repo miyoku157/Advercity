@@ -131,7 +131,7 @@ namespace AssemblyCSharp
 							}else if(Gobject.tag=="Water"){
 								Inventaire[1][i]=new Resources("Eau","UI/Water-drops1",1,5);
 								isFull=false;
-							}else if(Gobject.tag=="Xeno"){
+							}else if(Gobject.tag=="Xenonium"){
 								Inventaire[1][i]=new Resources("Xenonium","UI/large",1,2);
 								isFull=false;
 							}
@@ -145,7 +145,7 @@ namespace AssemblyCSharp
 					}
 
 				}
-				yield return new WaitForSeconds(1);
+				yield return new WaitForSeconds(0.5f);
 
 			}
 		}

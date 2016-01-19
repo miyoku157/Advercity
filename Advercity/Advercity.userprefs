@@ -1,20 +1,23 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\GameController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\FogOfWar\Outlined_Diffuse_Bumped.shader">
     <Files>
-      <File FileName="Assets\Script\Being.cs" Line="128" Column="23" />
+      <File FileName="Assets\Script\Being.cs" Line="140" Column="7" />
       <File FileName="Assets\Script\Character.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\RotateAround.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\SoundManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\Building_manager.cs" Line="53" Column="7" />
+      <File FileName="Assets\Script\Building_manager.cs" Line="53" Column="1" />
       <File FileName="Assets\Class\equipment.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\GameController.cs" Line="71" Column="4" />
+      <File FileName="Assets\Script\GameController.cs" Line="1" Column="1" />
       <File FileName="Assets\ResourcesManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Class\Item.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\FogOfWar\Outlined_Diffuse_Bumped.shader" Line="90" Column="33" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="D:\Projet Git\Advercity\Advercity\Assets\Script\GameController.cs" line="57" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

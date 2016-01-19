@@ -35,7 +35,7 @@ public class RotateAround : MonoBehaviour{
 	}
 	private void getTerrainHeight(){
 		RaycastHit hit;
-		if (Physics.Raycast (this.transform.position, this.transform.forward,out hit, 500,9)) {
+		if (Physics.Raycast (this.transform.position, this.transform.forward,out hit, 500,~((1<<9)|(1<<10)))) {
 			this.terrainHeight=hit.point.y;
 		}
 	}
