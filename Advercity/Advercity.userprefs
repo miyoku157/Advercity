@@ -1,15 +1,15 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Being.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\GameController.cs">
     <Files>
-      <File FileName="Assets\Script\Being.cs" Line="148" Column="38" />
+      <File FileName="Assets\Script\Being.cs" Line="128" Column="23" />
       <File FileName="Assets\Script\Character.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\RotateAround.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\SoundManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\Building_manager.cs" Line="53" Column="7" />
       <File FileName="Assets\Class\equipment.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\GameController.cs" Line="1" Column="1" />
-      <File FileName="Assets\ResourcesManager.cs" Line="8" Column="11" />
+      <File FileName="Assets\Script\GameController.cs" Line="71" Column="4" />
+      <File FileName="Assets\ResourcesManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Class\Item.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>

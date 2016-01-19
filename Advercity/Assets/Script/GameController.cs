@@ -31,7 +31,7 @@ namespace AssemblyCSharp
 	    void Update()
 	    {
 
-			//if (!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) {
+			if (!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) {
 				if (Input.GetKeyDown (KeyCode.Mouse0)) {
 					selecttarget = getMousePosition ();
 				if(selecttarget!=GameController.controller){
@@ -68,7 +68,7 @@ namespace AssemblyCSharp
 						}
 					}
 				}
-			//}
+			}
 	    }
 	    private IEnumerator checkObject()
 	    {
