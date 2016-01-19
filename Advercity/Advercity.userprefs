@@ -1,12 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\RotateAround.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\IHM.cs">
     <Files>
-      <File FileName="Assets\Script\IHM.cs" Line="98" Column="67" />
+      <File FileName="Assets\Script\IHM.cs" Line="95" Column="6" />
       <File FileName="Assets\Class\Item.cs" Line="1" Column="1" />
       <File FileName="Assets\Class\equipment.cs" Line="1" Column="1" />
       <File FileName="Assets\ResourcesManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\RotateAround.cs" Line="32" Column="50" />
+      <File FileName="Assets\Script\GameController.cs" Line="11" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

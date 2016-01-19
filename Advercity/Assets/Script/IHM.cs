@@ -87,7 +87,12 @@ public class IHM : MonoBehaviour
 			}
 	public void openInventaire(){
 			if (!inventory.activeSelf) {
-				Item[][] inv = GameController.Units [0] [0].Inventaire;
+				Item[][] inv;
+				if(GameController.oldSelectTarget.GetComponent<Being>()==null){
+					inv = GameController.Units [0] [0].Inventaire;
+				}else{
+					inv =GameController.oldSelectTarget.GetComponent<Being>().Inventaire;
+				}
 				inventory.SetActive (true);
 				readInventaire (inv);
 			} else {
