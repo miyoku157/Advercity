@@ -8,7 +8,7 @@ namespace AssemblyCSharp
 	    static GameObject controller;
 		public static List<Being>[] Units;
 		public static  GameObject selecttarget;
-		GameObject oldSelectTarget;
+		public static GameObject oldSelectTarget;
 		GameObject attObj;
 	    GameObject oldObject = null;
 	    // Use this for initialization
@@ -30,14 +30,19 @@ namespace AssemblyCSharp
 	    // Update is called once per frame
 	    void Update()
 	    {
+
 			//if (!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) {
 				if (Input.GetKeyDown (KeyCode.Mouse0)) {
 					selecttarget = getMousePosition ();
+				if(selecttarget!=GameController.controller){
 					if (selecttarget != null) {
-						selecttarget.GetComponent<Renderer> ().material.color = Color.white;
-						oldSelectTarget = selecttarget;
-						oldSelectTarget.GetComponent<Renderer> ().material.color = Color.green;
+						if (oldSelectTarget != null) {
+							oldSelectTarget.GetComponent<Renderer> ().material.SetFloat("_Outline",0.0f);
+						}
+					oldSelectTarget = selecttarget;
+					oldSelectTarget.GetComponent<Renderer>().material.SetFloat("_Outline",0.005f);
 					selecttarget=null;	
+					}
 					//to do
 					}
 				} else if (Input.GetKeyDown (KeyCode.Mouse1)) {
