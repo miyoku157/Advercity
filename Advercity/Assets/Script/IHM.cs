@@ -78,7 +78,8 @@ public class IHM : MonoBehaviour
 	}
 		public void selectPlayer(){
 			Camera.main.transform.position = GameController.Units [0] [0].transform.position+new Vector3(0,40,0);
-			GameController.selecttarget=GameController.Units [0] [0].gameObject;
+			GameController.oldSelectTarget=GameController.Units [0] [0].gameObject;
+			GameController.oldSelectTarget.GetComponent<Renderer>().material.SetFloat("_Outline",0.005f);
 		}
 }
 
