@@ -5,7 +5,7 @@ public class ResourcesManager : MonoBehaviour {
 	public int HP;
 	// Use this for initialization
 	void Start () {
-		HP = 100;
+		HP = 200;
 	}
 	
 	// Update is called once per frame

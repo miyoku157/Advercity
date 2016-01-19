@@ -38,35 +38,36 @@ public class Building_manager : MonoBehaviour
 	void OnCollisionEnter(Collision coll){
 		AssemblyCSharp.Item[] temp = coll.gameObject.GetComponent<AssemblyCSharp.Being> ().Inventaire [1];
 		for (int i=0; i<20; i++) {
-			if(temp[i].type==1){
-				AssemblyCSharp.Resources res= (AssemblyCSharp.Resources)temp[i];
-				if(res.name=="Bois"){
-					ressources [0] [0]+=res.nb;
-					LabelBois.text = "Bois : " + ressources [0] [0];
-				}else if(res.name=="Métal"){
-					ressources [0] [1]+=res.nb;
-					LabelMetal.text = "Métal : " + ressources [0] [1];
-				}else if (res.name=="Nourriture"){
-					ressources [0] [2]+=res.nb;
-					LabelFood.text = "Food : " + ressources [0] [2];
+			if(temp[i]!=null){
+				if(temp[i].type==1){
+					AssemblyCSharp.Resources res= (AssemblyCSharp.Resources)temp[i];
+					if(res.name=="Bois"){
+						ressources [0] [0]+=res.nb;
+						LabelBois.text = "Bois : " + ressources [0] [0];
+					}else if(res.name=="Métal"){
+						ressources [0] [1]+=res.nb;
+						LabelMetal.text = "Métal : " + ressources [0] [1];
+					}else if (res.name=="Nourriture"){
+						ressources [0] [2]+=res.nb;
+						LabelFood.text = "Food : " + ressources [0] [2];
 
-				}else if (res.name=="Eau"){
-					ressources [0] [3]+=res.nb;
-					LabelEau.text = "Eau : " + ressources [0] [3];
+					}else if (res.name=="Eau"){
+						ressources [0] [3]+=res.nb;
+						LabelEau.text = "Eau : " + ressources [0] [3];
 
+					}else{
+						ressources [0] [4]+=res.nb;
+						LabelXeno.text = "Xenonium : " + ressources [0] [4];
+
+					}
 				}else{
-					ressources [0] [4]+=res.nb;
-					LabelXeno.text = "Xenonium : " + ressources [0] [4];
-
+				
 				}
-			}else{
-			
 			}
 		}
 		for(int j=0;j<20;j++){
 			coll.gameObject.GetComponent<AssemblyCSharp.Being> ().Inventaire [1][j]=null;
 		}
-		coll.gameObject.GetComponent<NavMeshAgent>().Stop();
 		coll.gameObject.GetComponent<AssemblyCSharp.Being>().isGoing=false;
 	}
 }

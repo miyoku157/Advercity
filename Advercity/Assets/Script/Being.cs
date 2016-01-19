@@ -138,13 +138,14 @@ namespace AssemblyCSharp
 
 						}
 					}
+					Gobject.transform.parent.GetComponent<ResourcesManager>().HP=hp;
 					if(isFull|| hp<=0){
 						isGoing=true;
 						move(city.transform.position);
 					}
-					Gobject.transform.parent.GetComponent<ResourcesManager>().HP=hp;
+
 				}
-				yield return new WaitForSeconds(2);
+				yield return new WaitForSeconds(1);
 
 			}
 		}
