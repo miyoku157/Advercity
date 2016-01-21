@@ -21,8 +21,8 @@ public class IHM : MonoBehaviour
 		inventory = GameObject.Find ("ImageCadreInventaire");
 		caracterPanel.SetActive (false);
 		inventory.SetActive (false);
-		downWeapon=inventory.transform.GetChild(4).gameObject;
-		downArmor=inventory.transform.GetChild(5).gameObject;
+		downWeapon=inventory.transform.GetChild(6).gameObject;
+		downArmor=inventory.transform.GetChild(7).gameObject;
 
 	}
 	

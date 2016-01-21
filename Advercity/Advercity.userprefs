@@ -7,12 +7,15 @@
       <File FileName="Assets\Script\Enemy.cs" Line="1" Column="1" />
       <File FileName="Assets\Class\Item.cs" Line="1" Column="1" />
       <File FileName="Assets\Class\equipment.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\GameController.cs" Line="27" Column="6" />
+      <File FileName="Assets\Script\GameController.cs" Line="43" Column="1" />
+      <File FileName="Assets\Script\IHM.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\RotateAround.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\FogOfWar\Outlined_ONLY.shader" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="D:\Projet Git\Advercity\Advercity\Assets\Script\Being.cs" line="40" />
+      <Breakpoint file="D:\Projet Git\Advercity\Advercity\Assets\Script\GameController.cs" line="43" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

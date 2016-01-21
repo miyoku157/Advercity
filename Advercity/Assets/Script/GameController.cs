@@ -23,7 +23,7 @@ namespace AssemblyCSharp
 			Units = new List<Being>[2];
 			Units [0] = new List<Being> ();
 			Units [1] = new List<Being> ();
-			Units [0].Add (GameObject.Find ("Cube").GetComponent<Being>());
+			Units [0].Add (GameObject.Find ("ninja").GetComponent<Being>());
 			//Units [1].Add (GameObject.Find ("Cube (1)").GetComponent<Being>());
 	    }
 
@@ -37,10 +37,11 @@ namespace AssemblyCSharp
 				if(selecttarget!=GameController.controller){
 					if (selecttarget != null) {
 						if (oldSelectTarget != null) {
-							oldSelectTarget.GetComponent<Renderer> ().material.SetFloat("_Outline",0.0f);
+								oldSelectTarget.transform.GetChild(1).GetComponent<SkinnedMeshRenderer> ().materials[1].SetFloat("_Outline",0.005f);
 						}
 					oldSelectTarget = selecttarget;
-					oldSelectTarget.GetComponent<Renderer>().material.SetFloat("_Outline",0.005f);
+							oldSelectTarget.transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().materials[1].SetColor("_OutlineColor",Color.green);
+							oldSelectTarget.transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().materials[1].SetFloat("_Outline",0.005f);
 					selecttarget=null;	
 					}
 					//to do
@@ -86,8 +87,10 @@ namespace AssemblyCSharp
 							renderers[i].material.color=Color.white;
 						}
 					}else{
-	                	oldObject.GetComponent<Renderer>().material.color = Color.white;
-					}
+						if(oldObject!=oldSelectTarget){
+						oldObject.transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().materials[1].SetFloat("_Outline",0.000f);
+						}
+						}
 	            }
 	            if (Physics.Raycast(ray, out Hit, 100))
 	            {// modifier la distance finalel
@@ -104,8 +107,12 @@ namespace AssemblyCSharp
 					}
 					else if (Hit.collider.tag != "Map")
 	                {
-	                    Hit.collider.gameObject.GetComponent<Renderer>().material.color = Color.red;
-	                    oldObject = Hit.collider.gameObject;
+
+						if(Hit.collider.gameObject!=oldSelectTarget){
+							Hit.collider.transform.GetChild(1).gameObject.GetComponent<SkinnedMeshRenderer>().materials[1].SetColor("_OutlineColor",Color.red);
+							Hit.collider.transform.GetChild(1).gameObject.GetComponent<SkinnedMeshRenderer>().materials[1].SetFloat("_Outline",0.005f);
+							oldObject = Hit.collider.gameObject;
+						}
 	                }
 	            }
 	            yield return new WaitForSeconds(0.15f);

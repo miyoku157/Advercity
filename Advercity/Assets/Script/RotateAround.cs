@@ -8,7 +8,7 @@ public class RotateAround : MonoBehaviour{
 	private float dist=13.0f;
 	private bool zoom = false;
 	public void Start(){
-		this.transform.position = GameObject.Find ("Cube").transform.position + new Vector3 (0, 50, 0);
+		this.transform.position = GameObject.Find ("ninja").transform.position + new Vector3 (0, 50, 0);
 	}
 	private void moveRight(){
 		if(Input.mousePosition.x > Screen.width * 0.98f || Input.GetKey(KeyCode.RightArrow)){
