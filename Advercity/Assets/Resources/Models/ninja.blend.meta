@@ -1,0 +1,503 @@
+fileFormatVersion: 2
+guid: 5ac1b09371e59b44d808993aef0a177e
+timeCreated: 1453361916
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Joint1
+    100002: Joint10
+    100004: Joint11
+    100006: Joint12
+    100008: Joint13
+    100010: Joint14
+    100012: Joint15
+    100014: Joint16
+    100016: Joint17
+    100018: Joint18
+    100020: Joint19
+    100022: Joint2
+    100024: Joint20
+    100026: Joint21
+    100028: Joint22
+    100030: Joint23
+    100032: Joint24
+    100034: Joint25
+    100036: Joint26
+    100038: Joint27
+    100040: Joint29
+    100042: Joint3
+    100044: Joint4
+    100046: Joint5
+    100048: Joint6
+    100050: Joint7
+    100052: Joint8
+    100054: Joint9
+    100056: //RootNode
+    100058: ninja_ms3d_ao
+    100060: ninja_ms3d_eo
+    100062: ninja_ms3d_mo
+    400000: Joint1
+    400002: Joint10
+    400004: Joint11
+    400006: Joint12
+    400008: Joint13
+    400010: Joint14
+    400012: Joint15
+    400014: Joint16
+    400016: Joint17
+    400018: Joint18
+    400020: Joint19
+    400022: Joint2
+    400024: Joint20
+    400026: Joint21
+    400028: Joint22
+    400030: Joint23
+    400032: Joint24
+    400034: Joint25
+    400036: Joint26
+    400038: Joint27
+    400040: Joint29
+    400042: Joint3
+    400044: Joint4
+    400046: Joint5
+    400048: Joint6
+    400050: Joint7
+    400052: Joint8
+    400054: Joint9
+    400056: //RootNode
+    400058: ninja_ms3d_ao
+    400060: ninja_ms3d_eo
+    400062: ninja_ms3d_mo
+    4300000: ninja_ms3d_mo
+    7400000: Default Take
+    7400002: FullTake
+    7400004: Walk
+    7400006: SwipeSword
+    7400008: SpinSword
+    9500000: //RootNode
+    13700000: ninja_ms3d_mo
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Walk
+      takeName: ninja_ms3d_act
+      firstFrame: 0
+      lastFrame: 14
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ninja_ms3d_eo
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint7
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint7/Joint8
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint9
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint9/Joint10
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint9/Joint10/Joint11
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint9/Joint10/Joint11/Joint12
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint9/Joint10/Joint11/Joint12/Joint13
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint9/Joint10/Joint11/Joint12/Joint13/Joint29
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint14
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint14/Joint15
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint14/Joint15/Joint16
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint14/Joint15/Joint16/Joint17
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint18
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint18/Joint19
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint18/Joint19/Joint20
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint18/Joint19/Joint20/Joint21
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint18/Joint19/Joint20/Joint21/Joint22
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint23
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint23/Joint24
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint23/Joint24/Joint25
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint23/Joint24/Joint25/Joint26
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint23/Joint24/Joint25/Joint26/Joint27
+        weight: 1
+      - path: ninja_ms3d_mo
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: FullTake
+      takeName: ninja_ms3d_act
+      firstFrame: 0
+      lastFrame: 299
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ninja_ms3d_eo
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint7
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint7/Joint8
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint9
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint9/Joint10
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint9/Joint10/Joint11
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint9/Joint10/Joint11/Joint12
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint9/Joint10/Joint11/Joint12/Joint13
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint9/Joint10/Joint11/Joint12/Joint13/Joint29
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint14
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint14/Joint15
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint14/Joint15/Joint16
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint14/Joint15/Joint16/Joint17
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint18
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint18/Joint19
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint18/Joint19/Joint20
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint18/Joint19/Joint20/Joint21
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint18/Joint19/Joint20/Joint21/Joint22
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint23
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint23/Joint24
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint23/Joint24/Joint25
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint23/Joint24/Joint25/Joint26
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint23/Joint24/Joint25/Joint26/Joint27
+        weight: 1
+      - path: ninja_ms3d_mo
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: SwipeSword
+      takeName: ninja_ms3d_act
+      firstFrame: 32
+      lastFrame: 44
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ninja_ms3d_eo
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint7
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint7/Joint8
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint9
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint9/Joint10
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint9/Joint10/Joint11
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint9/Joint10/Joint11/Joint12
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint9/Joint10/Joint11/Joint12/Joint13
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint9/Joint10/Joint11/Joint12/Joint13/Joint29
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint14
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint14/Joint15
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint14/Joint15/Joint16
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint14/Joint15/Joint16/Joint17
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint18
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint18/Joint19
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint18/Joint19/Joint20
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint18/Joint19/Joint20/Joint21
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint18/Joint19/Joint20/Joint21/Joint22
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint23
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint23/Joint24
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint23/Joint24/Joint25
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint23/Joint24/Joint25/Joint26
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint23/Joint24/Joint25/Joint26/Joint27
+        weight: 1
+      - path: ninja_ms3d_mo
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: SpinSword
+      takeName: ninja_ms3d_act
+      firstFrame: 45
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ninja_ms3d_eo
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint7
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint7/Joint8
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint9
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint9/Joint10
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint9/Joint10/Joint11
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint9/Joint10/Joint11/Joint12
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint9/Joint10/Joint11/Joint12/Joint13
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint9/Joint10/Joint11/Joint12/Joint13/Joint29
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint14
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint14/Joint15
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint14/Joint15/Joint16
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint14/Joint15/Joint16/Joint17
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint18
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint18/Joint19
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint18/Joint19/Joint20
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint18/Joint19/Joint20/Joint21
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint18/Joint19/Joint20/Joint21/Joint22
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint23
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint23/Joint24
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint23/Joint24/Joint25
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint23/Joint24/Joint25/Joint26
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint23/Joint24/Joint25/Joint26/Joint27
+        weight: 1
+      - path: ninja_ms3d_mo
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
