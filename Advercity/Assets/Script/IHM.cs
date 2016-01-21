@@ -87,21 +87,31 @@ namespace AssemblyCSharp
         }
         public void openCompagnon()
         {
-            if (caracterPanel.activeSelf)
-            {
-                caracterPanel.SetActive(false);
-            }
-            else {
-                caracterPanel.SetActive(true);
-                caracterPanel.transform.GetChild(2).GetComponent<Text>().text = "Force : " + GameController.Units[0][0].strenght;
-                caracterPanel.transform.GetChild(3).GetComponent<Text>().text = "Endurance : " + GameController.Units[0][0].stamina;
-                caracterPanel.transform.GetChild(4).GetComponent<Text>().text = "Intelligence : " + GameController.Units[0][0].intellect;
-                caracterPanel.transform.GetChild(5).GetComponent<Text>().text = "Perception : " + GameController.Units[0][0].perception;
-                caracterPanel.transform.GetChild(6).GetComponent<Text>().text = "Charisme : " + GameController.Units[0][0].charisma;
-                caracterPanel.transform.GetChild(7).GetComponent<Text>().text = "Portée : " + GameController.Units[0][0].scope;
-
-            }
+			for(int i=0;i<GameController.Units.Length;i++){
+				if(GameController.oldSelectTarget==null){
+					openInt=0;
+				}
+				else if(GameController.oldSelectTarget.GetComponent<Being>()==GameController.Units[0][i]){
+					openInt=i;
+				}
+				if(caracterPanel.activeSelf){
+					caracterPanel.SetActive(false);
+				}else{
+					caracterPanel.SetActive(true);
+					readCharacter();
+				}
+			}
+            
         }
+		private void readCharacter(){
+
+				caracterPanel.transform.GetChild(2).GetComponent<Text>().text = "Force : " + GameController.Units[0][openInt].strenght;
+				caracterPanel.transform.GetChild(3).GetComponent<Text>().text = "Endurance : " + GameController.Units[0][openInt].stamina;
+				caracterPanel.transform.GetChild(4).GetComponent<Text>().text = "Intelligence : " + GameController.Units[0][openInt].intellect;
+				caracterPanel.transform.GetChild(5).GetComponent<Text>().text = "Perception : " + GameController.Units[0][openInt].perception;
+				caracterPanel.transform.GetChild(6).GetComponent<Text>().text = "Charisme : " + GameController.Units[0][openInt].charisma;
+				caracterPanel.transform.GetChild(7).GetComponent<Text>().text = "Portée : " + GameController.Units[0][openInt].scope;
+		}
         public void openInventaire()
         {
             if (!inventory.activeSelf)
@@ -172,6 +182,19 @@ namespace AssemblyCSharp
                 }
             }
         }
+		public void plusCharacter(){
+			openInt++;
+			openInt = openInt % 3;
+			readCharacter ();
+			
+		}
+		public void moinsCharacter(){
+			openInt--;
+			if (openInt < 0) {
+				openInt=3;
+			}
+			readCharacter ();
+		}
 		public void plusinvCharacter(){
 			openInt++;
 			openInt = openInt % 3;

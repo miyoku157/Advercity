@@ -26,7 +26,7 @@ namespace AssemblyCSharp
             Units[0] = new List<Being>();
             Units[1] = new List<Being>();
             Units[0].Add(GameObject.Find("ninja").GetComponent<Being>());
-            Units [1].Add (GameObject.Find ("Cube (1)").GetComponent<Being>());
+//            Units [1].Add (GameObject.Find ("Cube (1)").GetComponent<Being>());
 			ressources.Add (GameObject.Find ("Forest").GetComponent<ResourcesManager>());
         }
 
@@ -64,7 +64,7 @@ namespace AssemblyCSharp
                     attObj = getMousePosition();
                     if (attObj != null && oldSelectTarget != null)
                     {
-                        if (attObj != controller && !oldSelectTarget.GetComponent<Being>().isAttacking && attObj != oldSelectTarget && attObj.tag == "Being")
+                        if (attObj != controller && !oldSelectTarget.GetComponent<Being>().isAttacking && attObj != oldSelectTarget && attObj.tag == "Ennemy")
                         {
                             oldSelectTarget.GetComponent<Being>().isAttacking = true;
                             oldSelectTarget.GetComponent<Being>().isCollecting = false;

@@ -39,6 +39,9 @@ namespace AssemblyCSharp
         // Update is called once per frame
         virtual protected void Update()
         {
+			if (agent.remainingDistance ==0) {
+				isGoing=false;
+			}
 			if(animator)
 			{
 				animator.SetBool("isGoing", isGoing);

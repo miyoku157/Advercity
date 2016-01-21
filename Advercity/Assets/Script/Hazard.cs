@@ -13,6 +13,7 @@ namespace AssemblyCSharp
 {
     public class Hazard : Being
     {
+		bool inside=false;
         protected override void Start()
         {
             base.Start();
@@ -21,6 +22,21 @@ namespace AssemblyCSharp
         {
             base.Update();
         }
+		void OnTriggerEnter(Collider coll){
+			inside = true;
+			if (coll.GetComponent<Being> ()!=null) {
+				StartCoroutine ("DestroyUnit", coll.gameObject);
+			}
+		}
+		void OnTriggerExit(){
+			inside = false;
+		}
+		IEnumerator DestroyUnit(GameObject obj){
+			while (inside) {
+				obj.GetComponent<Being> ().stamina -= 25;
+				yield return new WaitForSeconds (1);
+			}
+		}
     }
 }
 
