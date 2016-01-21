@@ -22,6 +22,7 @@ namespace AssemblyCSharp
         public int charisma;
         public int scope = 3;
         public Item[][] Inventaire;
+		private Animator animator;
 
         // Use this for initialization
         virtual protected void Start()
@@ -33,17 +34,27 @@ namespace AssemblyCSharp
             //to delete
             stamina = 100;
             city = GameObject.Find("Centre ville");
+			animator = GetComponent<Animator>();
         }
         // Update is called once per frame
         virtual protected void Update()
         {
+			if(animator)
+			{
+				animator.SetBool("isGoing", isGoing);
+				animator.SetBool("isAttacking", isAttacking);
+				animator.SetBool("isCollecting", isCollecting);
+			}
+
             if (isCollecting || isAttacking || isGoing)
             {
                 isoccupy = true;
             }
-            else {
+            else
+			{
                 isoccupy = false;
             }
+
             if (stamina < 0)
             {
                 GameObject.Destroy(gameObject);
