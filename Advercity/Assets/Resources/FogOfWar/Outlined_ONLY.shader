@@ -41,7 +41,6 @@ ENDCG
 			Name "BASE"
 			Cull Back
 			Blend Zero One
- 
 			// uncomment this to hide inner details:
 			//Offset -8, -8
  
@@ -56,7 +55,6 @@ ENDCG
 			Name "OUTLINE"
 			Tags { "LightMode" = "Always" }
 			Cull Front
- 
 			// you can choose what kind of blending mode you want for the outline
 			//Blend SrcAlpha OneMinusSrcAlpha // Normal
 			//Blend One One // Additive

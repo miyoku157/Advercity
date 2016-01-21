@@ -104,6 +104,9 @@ namespace AssemblyCSharp
             if (gameObject.GetComponent<Being>() != null)
             {
                 stat = gameObject.GetComponent<Being>();
+				isAttacking = true;
+				isGoing = false;
+
             }
             while (Gobject != null && isAttacking)
             {
@@ -146,6 +149,8 @@ namespace AssemblyCSharp
                 if (Vector3.Distance(Gobject.transform.position, this.transform.position) > 3)
                 {
                     move(Gobject.transform.position);
+					isCollecting = true;
+					isGoing=false;
                 }
                 else {
                     int hp = Gobject.transform.parent.GetComponent<ResourcesManager>().HP;
@@ -185,8 +190,8 @@ namespace AssemblyCSharp
                     Gobject.transform.parent.GetComponent<ResourcesManager>().HP = hp;
                     if (isFull || hp <= 0)
                     {
-                        isGoing = true;
                         move(city.transform.position);
+						isCollecting=true;
                     }
 
                 }

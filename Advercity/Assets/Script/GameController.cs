@@ -42,12 +42,16 @@ namespace AssemblyCSharp
                         {
                             if (oldSelectTarget != null)
                             {
-                                oldSelectTarget.transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().materials[1].SetFloat("_Outline", 0.005f);
-                            }
+								if(oldSelectTarget.tag=="Being"){
+                                	oldSelectTarget.transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().materials[1].SetFloat("_Outline", 0.005f);
+								}
+								}
                             oldSelectTarget = selecttarget;
-                            oldSelectTarget.transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().materials[1].SetColor("_OutlineColor", Color.green);
-                            oldSelectTarget.transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().materials[1].SetFloat("_Outline", 0.005f);
-                            selecttarget = null;
+							if(oldSelectTarget.tag=="Being"){
+                            	oldSelectTarget.transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().materials[1].SetColor("_OutlineColor", Color.green);
+                            	oldSelectTarget.transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().materials[1].SetFloat("_Outline", 0.005f);
+							}
+							selecttarget = null;
                         }
                         //to do
                     }
@@ -93,7 +97,7 @@ namespace AssemblyCSharp
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 if (oldObject != null)
                 {
-                    if (oldObject.tag == "Tree")
+                    if (oldObject.layer == LayerMask.NameToLayer("Resources"))
                     {
                         GameObject parent = oldObject.transform.parent.gameObject;
                         Renderer[] renderers = parent.GetComponentsInChildren<Renderer>();
@@ -136,7 +140,7 @@ namespace AssemblyCSharp
                         }
                     }
                 }
-                yield return new WaitForSeconds(0.15f);
+                yield return new WaitForSeconds(0.1f);
             }
         }
         public static GameObject getMousePosition()
