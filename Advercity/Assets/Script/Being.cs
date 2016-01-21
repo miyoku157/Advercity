@@ -149,10 +149,12 @@ namespace AssemblyCSharp
         }
         virtual protected IEnumerator collect(GameObject Gobject)
         {
-            isGoing = false;
-            isAttacking = false;
-            isCollecting = true;
-            while (Gobject != null && isCollecting)
+            
+            
+			isGoing = false;
+			isAttacking = false;
+			isCollecting = true;
+			while (Gobject != null && isCollecting)
             {
                 bool isFull = true;
                 //animation collect
@@ -164,7 +166,7 @@ namespace AssemblyCSharp
                 {
                     move(Gobject.transform.position);
 					isCollecting = true;
-					isGoing=false;
+					isGoing=true;
                 }
                 else {
                     int hp = Gobject.transform.parent.GetComponent<ResourcesManager>().HP;

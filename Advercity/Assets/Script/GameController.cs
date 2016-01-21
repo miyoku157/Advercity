@@ -66,15 +66,14 @@ namespace AssemblyCSharp
                     {
                         if (attObj != controller && !oldSelectTarget.GetComponent<Being>().isAttacking && attObj != oldSelectTarget && attObj.tag == "Ennemy")
                         {
-                            oldSelectTarget.GetComponent<Being>().isAttacking = true;
-                            oldSelectTarget.GetComponent<Being>().isCollecting = false;
+                            
                             oldSelectTarget.GetComponent<Being>().launchAttack(attObj);
 
                         }
                         else if (attObj.layer == LayerMask.NameToLayer("Resources") && !oldSelectTarget.GetComponent<Being>().isCollecting)
                         {
-                            oldSelectTarget.GetComponent<Being>().isCollecting = true;
-                            oldSelectTarget.GetComponent<Being>().isAttacking = false;
+                            
+                           
                             oldSelectTarget.GetComponent<Being>().launchCollect(attObj);
 
                         }
@@ -82,8 +81,7 @@ namespace AssemblyCSharp
                         {
                             if (oldSelectTarget.GetComponent<Being>())
                             {
-                                oldSelectTarget.GetComponent<Being>().isAttacking = false;
-                                oldSelectTarget.GetComponent<Being>().isCollecting = false;
+                                
                                 oldSelectTarget.GetComponent<Being>().move(controller.transform.position);
                                 //todo
                             }

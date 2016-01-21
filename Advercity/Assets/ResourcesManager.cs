@@ -21,6 +21,7 @@ public class ResourcesManager : MonoBehaviour
     }
     void OnTriggerEnter(Collider coll)
     {
+		coll.gameObject.GetComponent<AssemblyCSharp.Being> ().isGoing = false;
         //launch animcollect
     }
 	void GetSensorPositionData(out Vector3 a_position)
