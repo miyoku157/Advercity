@@ -23,8 +23,8 @@ namespace AssemblyCSharp
 			Units = new List<Being>[2];
 			Units [0] = new List<Being> ();
 			Units [1] = new List<Being> ();
-			//Add Player or compagnon
 			Units [0].Add (GameObject.Find ("Cube").GetComponent<Being>());
+			//Units [1].Add (GameObject.Find ("Cube (1)").GetComponent<Being>());
 	    }
 
 	    // Update is called once per frame
@@ -92,7 +92,7 @@ namespace AssemblyCSharp
 	            if (Physics.Raycast(ray, out Hit, 100))
 	            {// modifier la distance finalel
 
-	                if(Hit.collider.tag=="Tree"||Hit.collider.tag=="Xenonium"){
+	                if(Hit.collider.gameObject.layer==LayerMask.NameToLayer("Resources")){
 						GameObject parent=Hit.collider.transform.parent.gameObject;
 						Renderer[] renderers=parent.GetComponentsInChildren<Renderer>();
 						int lenght= renderers.GetLength(0);

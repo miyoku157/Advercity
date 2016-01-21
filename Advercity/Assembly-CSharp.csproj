@@ -81,6 +81,7 @@
      <Compile Include="Assets\Synapse\Demo\World\NPC\Heat.cs" />
      <Compile Include="Assets\Synapse\Demo\World\NPC\Points.cs" />
      <Compile Include="Assets\Synapse\Demo\World\RandomSpawner.cs" />
+     <Compile Include="Assets\markScript.cs" />
      <None Include="Assets\Resources\Rocks Pack\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Resources\Rocks Pack\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseEffectShaderRGB.shader" />
      <None Include="Assets\Resources\Rocks Pack\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />

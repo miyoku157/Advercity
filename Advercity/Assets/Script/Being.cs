@@ -75,6 +75,9 @@ namespace AssemblyCSharp
 			target.stamina -= basdamage;
 		}
 		virtual public void move(Vector3 position){
+			isGoing = true;
+			isAttacking = false;
+			isCollecting = false;
 			GetComponent<NavMeshAgent> ().SetDestination (position);
 		}
 		virtual public void launchAttack(GameObject Target){
@@ -84,10 +87,12 @@ namespace AssemblyCSharp
 		// Attack coroutine, allow to attack or move to the target just by right clicking
 		virtual protected IEnumerator attack(GameObject Gobject)
 		{
+			isGoing = false;
+			isAttacking = true;
+			isCollecting = false;
 			Being stat = null;
-			if (gameObject.GetComponent<Being>() != null)
-			{
-				stat = gameObject.GetComponent<Being>();
+			if (gameObject.GetComponent<Being> () != null) {
+				stat = gameObject.GetComponent<Being> ();
 			}
 			while (Gobject!=null&&isAttacking)
 			{
@@ -103,12 +108,18 @@ namespace AssemblyCSharp
 					}
 				}
 				yield return new WaitForSeconds(0.5f);
+				if(Gobject==null){
+					isAttacking=false;
+				}
 			}
 		}
 		virtual public void launchCollect(GameObject Gobject){
 			StartCoroutine ("collect",Gobject);
 		}
 		virtual protected IEnumerator collect(GameObject Gobject){
+			isGoing = false;
+			isAttacking = false;
+			isCollecting = true;
 			while (Gobject!=null&&isCollecting) {
 				bool isFull = true;
 				//animation collect

@@ -12,7 +12,9 @@ public class Building_manager : MonoBehaviour
 	Text LabelEau;
 	Text LabelXeno;
 	private Brain  synapseBrain;
-	public int Idcamp;
+	public int Idcamp=1;
+	public int[] visitedMark;
+	private GameObject[] mark;
     // Use this for initialization
 	//1:bois,2Métal, 3Bouffe,4 eau,5 Extrateresre
     void Start()
@@ -23,33 +25,51 @@ public class Building_manager : MonoBehaviour
 		LabelMetal = GameObject.Find ("LabelMetal").GetComponent<Text> ();
 		LabelMetal.text = "Métal : " + ressources [1];
 		LabelFood = GameObject.Find ("LabelFood").GetComponent<Text>();
-		LabelFood.text = "Food : " + ressources[2];
+		LabelFood.text = "Nourriture : " + ressources[2];
 		LabelEau = GameObject.Find ("LabelEau").GetComponent<Text>();
 		LabelEau.text = "Eau : " + ressources [3];
 		LabelXeno = GameObject.Find ("LabelXenonium").GetComponent<Text>();
 		LabelXeno.text = "Xenonium : " + ressources [4];
+		mark = new GameObject[11];
+		visitedMark = new int[11];
+		for (int i=0; i<11; i++) {
+			mark[i]=GameObject.Find("mark1 ("+i+")");
+		}
+		StartCoroutine ("StartAI");
     }
 	IEnumerator StartAI(){
-		synapseBrain = new SynapseLibrary_IA.Ennemy.Perception (this) ;
+		synapseBrain = new SynapseLibrary_IA.Building.MissResources (this) ;
 		while (Application.isPlaying&& synapseBrain!=null){
 			AIUpdate();
 			yield return new WaitForSeconds(1);
 		}
 	}
+	protected object[] GetLayeremptyData(){
+		Object[] tab = new Object[1];
+		tab [0] = this;
+		return tab;
+	}
+
 	private void AIUpdate(){
 		if (synapseBrain.Process () == false) {
 		}
 	}
-	protected void DesirePickResourcesCallback(float resources ){
-		for (int i =0; i<5; i++) {
-			if(resources==ressources[i]){
-				foreach(AssemblyCSharp.Being temp in AssemblyCSharp.GameController.Units[Idcamp]){
-					if(!temp.isoccupy){
-						
-					}
+	protected void DesirePickResourcesCallback(){
+		foreach(AssemblyCSharp.Being temp in AssemblyCSharp.GameController.Units[Idcamp]){
+		int alea=Random.Range(0,11);
+		bool visited= false;
+		for(int j=0;j<11;j++){
+			if(alea==visitedMark[j]){
+				visited=true;
+			}
+		}
+		if(!visited){
+			if(!temp.isoccupy){
+					temp.move(mark[alea].transform.position);
 				}
 			}
 		}
+			
 	}
 	protected void GetSensorWaterData(out float water){
 		water =ressources[3] ;

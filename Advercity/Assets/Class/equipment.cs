@@ -17,7 +17,9 @@ namespace AssemblyCSharp
 		public int damage;
 		public int bonus;
 		public int bonusScope;
+		public equipment (string _name, string path, int type):base(_name,path,type){
 
+		}
         public equipment(string _name,string _path,int _type,int _damage, int _bonus, int _bonusScope, int _typeEquip):base( _name,_path,_type)
         {
 			damage = _damage;
