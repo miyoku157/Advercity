@@ -23,4 +23,9 @@ public class ResourcesManager : MonoBehaviour
     {
         //launch animcollect
     }
+	void GetSensorPositionData(out Vector3 a_position)
+	{
+			a_position = gameObject.transform.position;
+
+	}
 }

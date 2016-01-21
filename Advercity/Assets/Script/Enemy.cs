@@ -16,7 +16,9 @@ namespace AssemblyCSharp
     public class Enemy : Being
     {
         private Brain synapseBrain;
-        int motivation = 70;
+		private Brain synapseBrain2;
+        int motivation = 50;
+		int MotivationR=75;
         protected override void Start()
         {
             base.Start();
@@ -25,7 +27,8 @@ namespace AssemblyCSharp
         IEnumerator StartAI()
         {
             synapseBrain = new SynapseLibrary_IA.Ennemy.Perception(this);
-            while (Application.isPlaying && synapseBrain != null)
+			synapseBrain2 = new SynapseLibrary_IA.Ennemy.Collector (this);
+            while (Application.isPlaying && synapseBrain != null&&synapseBrain2!=null)
             {
                 AIUpdate();
                 yield return new WaitForSeconds(1);
@@ -33,9 +36,14 @@ namespace AssemblyCSharp
         }
         private void AIUpdate()
         {
-            if (synapseBrain.Process() == false)
-            {
-            }
+			if (synapseBrain.Process() == false)
+			{
+				if (synapseBrain2.Process () == false) {
+				}
+			}
+
+           
+
         }
         protected override void Update()
         {
@@ -49,6 +57,10 @@ namespace AssemblyCSharp
         {
             percept = base.perception;
         }
+		protected void GetSensorMotivationRData(out int motiv)
+		{
+			motiv = MotivationR;
+		}
         protected void GetSensorMotivationData(out int motiv)
         {
             motiv = motivation;
@@ -56,12 +68,22 @@ namespace AssemblyCSharp
         void OnDestroy()
         {
         }
+		protected object[] GetLayerResourcesData()
+		{
+			return GameController.ressources.ToArray();
+		}
         protected object[] GetLayerOpponentData()
         {
             return GameController.Units[0].ToArray();
         }
+		protected void DesireCollectCallback(object ressource){
+			Debug.Log ("collect");
+			ResourcesManager res = ressource as ResourcesManager;
+			launchCollect (res.gameObject);
+		}
         protected void DesireInsightCallback(object opponent)
         {
+			Debug.Log ("attack");
             Being target = opponent as Being;
             float dist = Vector3.Distance(this.transform.position, target.transform.position);
             if (dist < target.scope)

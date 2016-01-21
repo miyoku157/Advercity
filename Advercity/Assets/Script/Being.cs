@@ -18,7 +18,7 @@ namespace AssemblyCSharp
         public int strenght = 70;
         public int stamina;
         public int intellect;
-        public int perception = 10;
+        public int perception = 50;
         public int charisma;
         public int scope = 3;
         public Item[][] Inventaire;

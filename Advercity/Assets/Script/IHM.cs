@@ -11,6 +11,7 @@ namespace AssemblyCSharp
         private GameObject downWeapon;
         private GameObject downArmor;
         private int equip;
+		private int openInt=0;
         // Use this for initialization
         void Start()
         {
@@ -106,7 +107,7 @@ namespace AssemblyCSharp
             if (!inventory.activeSelf)
             {
                 Item[][] inv;
-                if (GameController.oldSelectTarget.GetComponent<Being>() == null)
+                if (GameController.oldSelectTarget == null)
                 {
                     inv = GameController.Units[0][0].Inventaire;
                 }
@@ -114,6 +115,14 @@ namespace AssemblyCSharp
                     inv = GameController.oldSelectTarget.GetComponent<Being>().Inventaire;
                 }
                 inventory.SetActive(true);
+				for(int i=0;i<GameController.Units.Length;i++){
+					if(GameController.oldSelectTarget==null){
+						openInt=0;
+					}
+					else if(GameController.oldSelectTarget.GetComponent<Being>()==GameController.Units[0][i]){
+						openInt=i;
+					}
+				}
                 readInventaire(inv);
             }
             else {
@@ -163,6 +172,19 @@ namespace AssemblyCSharp
                 }
             }
         }
+		public void plusinvCharacter(){
+			openInt++;
+			openInt = openInt % 3;
+			readInventaire(GameController.Units[0][openInt].Inventaire);
+
+		}
+		public void moinsinvCharacter(){
+			openInt--;
+			if (openInt < 0) {
+				openInt=3;
+			}
+			readInventaire(GameController.Units[0][openInt].Inventaire);
+		}
         public void changeArmor(int equip)
         {
             string name = downArmor.GetComponent<Dropdown>().options[equip].text;

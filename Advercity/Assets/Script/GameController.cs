@@ -7,6 +7,7 @@ namespace AssemblyCSharp
     {
         static GameObject controller;
         public static List<Being>[] Units;
+		public static List<ResourcesManager> ressources;
         public static GameObject selecttarget;
         public static GameObject oldSelectTarget;
         GameObject attObj;
@@ -16,6 +17,7 @@ namespace AssemblyCSharp
         {
             attObj = null;
             selecttarget = null;
+			ressources = new List<ResourcesManager> ();
             controller = this.gameObject;
             StartCoroutine(checkObject());
 
@@ -25,6 +27,7 @@ namespace AssemblyCSharp
             Units[1] = new List<Being>();
             Units[0].Add(GameObject.Find("ninja").GetComponent<Being>());
             Units [1].Add (GameObject.Find ("Cube (1)").GetComponent<Being>());
+			ressources.Add (GameObject.Find ("Forest").GetComponent<ResourcesManager>());
         }
 
         // Update is called once per frame
