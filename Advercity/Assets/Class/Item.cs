@@ -10,16 +10,16 @@
 using System;
 namespace AssemblyCSharp
 {
-	public abstract class Item
+    public abstract class Item
     {
-		public string name;
-		protected string path;
-		public int type;
-        public Item(string _name, string _path,int _type)
+        public string name;
+        protected string path;
+        public int type;
+        public Item(string _name, string _path, int _type)
         {
-			name = _name;
-			path = _path;
-			type = _type;
+            name = _name;
+            path = _path;
+            type = _type;
         }
 
     }

@@ -1,21 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ResourcesManager : MonoBehaviour {
-	public int HP;
-	// Use this for initialization
-	void Start () {
-		HP = 200;
-	}
-	
-	// Update is called once per frame
-	void Update () {
+public class ResourcesManager : MonoBehaviour
+{
+    public int HP;
+    // Use this for initialization
+    void Start()
+    {
+        HP = 200;
+    }
 
-		if (HP <= 0) {
-			GameObject.Destroy(this.gameObject);
-		}
-	}
-	void OnTriggerEnter(Collider coll){
-		//launch animcollect
-	}
+    // Update is called once per frame
+    void Update()
+    {
+
+        if (HP <= 0)
+        {
+            GameObject.Destroy(this.gameObject);
+        }
+    }
+    void OnTriggerEnter(Collider coll)
+    {
+        //launch animcollect
+    }
 }

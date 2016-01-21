@@ -25,7 +25,7 @@ namespace AssemblyCSharp
         {
             base.Update();
 
-			//Fog of war update; set position and perception of the object and the plane
+            //Fog of war update; set position and perception of the object and the plane
             Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
             Ray rayToPlayerPos = Camera.main.ScreenPointToRay(screenPos);
             RaycastHit hit;

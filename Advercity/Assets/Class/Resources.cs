@@ -12,10 +12,10 @@ namespace AssemblyCSharp
 {
     public class Resources : Item
     {
-		public int nb;
-        public Resources(string _name, string _path,int _type, int _nb):base(_name,_path,_type)
+        public int nb;
+        public Resources(string _name, string _path, int _type, int _nb) : base(_name, _path, _type)
         {
-			nb = _nb;
+            nb = _nb;
         }
     }
 }

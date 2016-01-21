@@ -11,21 +11,21 @@ using System;
 using UnityEngine;
 namespace AssemblyCSharp
 {
-	public class Skill
-	{
-		public string name;
-		public Sprite image;
-		public float damage;
-		public float area;
-		public int target;
-		public Skill (string _name, string _path, float _damage, float _area, int _target)
-		{
-			name = _name;
-			image=UnityEngine.Resources.Load<Sprite>(_path);
-			damage = _damage;
-			area = _area;
-			target = _target;
-		}
-	}
+    public class Skill
+    {
+        public string name;
+        public Sprite image;
+        public float damage;
+        public float area;
+        public int target;
+        public Skill(string _name, string _path, float _damage, float _area, int _target)
+        {
+            name = _name;
+            image = UnityEngine.Resources.Load<Sprite>(_path);
+            damage = _damage;
+            area = _area;
+            target = _target;
+        }
+    }
 }
 
