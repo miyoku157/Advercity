@@ -24,7 +24,7 @@ namespace AssemblyCSharp
             Units[0] = new List<Being>();
             Units[1] = new List<Being>();
             Units[0].Add(GameObject.Find("ninja").GetComponent<Being>());
-            //Units [1].Add (GameObject.Find ("Cube (1)").GetComponent<Being>());
+            Units [1].Add (GameObject.Find ("Cube (1)").GetComponent<Being>());
         }
 
         // Update is called once per frame

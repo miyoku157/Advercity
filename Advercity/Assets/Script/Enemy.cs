@@ -67,11 +67,9 @@ namespace AssemblyCSharp
             if (dist < target.scope)
             {
                 base.launchAttack(target.gameObject);
-                isAttacking = true;
             }
             else {
                 base.move(target.transform.position);
-                isAttacking = false;
             }
         }
     }
