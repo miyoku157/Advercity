@@ -75,6 +75,7 @@ ModelImporter:
     7400004: Walk
     7400006: SwipeSword
     7400008: SpinSword
+    7400010: Collect
     9500000: //RootNode
     13700000: ninja_ms3d_mo
   materials:
@@ -378,6 +379,96 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ninja_ms3d_eo
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint7
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint7/Joint8
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint9
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint9/Joint10
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint9/Joint10/Joint11
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint9/Joint10/Joint11/Joint12
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint9/Joint10/Joint11/Joint12/Joint13
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint9/Joint10/Joint11/Joint12/Joint13/Joint29
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint14
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint14/Joint15
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint14/Joint15/Joint16
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint3/Joint4/Joint5/Joint6/Joint14/Joint15/Joint16/Joint17
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint18
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint18/Joint19
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint18/Joint19/Joint20
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint18/Joint19/Joint20/Joint21
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint18/Joint19/Joint20/Joint21/Joint22
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint23
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint23/Joint24
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint23/Joint24/Joint25
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint23/Joint24/Joint25/Joint26
+        weight: 1
+      - path: ninja_ms3d_eo/ninja_ms3d_ao/Joint1/Joint2/Joint23/Joint24/Joint25/Joint26/Joint27
+        weight: 1
+      - path: ninja_ms3d_mo
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Collect
+      takeName: ninja_ms3d_act
+      firstFrame: 84
+      lastFrame: 95
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
