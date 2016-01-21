@@ -125,7 +125,7 @@ namespace AssemblyCSharp
                     inv = GameController.oldSelectTarget.GetComponent<Being>().Inventaire;
                 }
                 inventory.SetActive(true);
-				for(int i=0;i<GameController.Units.Length;i++){
+				for(int i=0;i<GameController.Units[0].Count;i++){
 					if(GameController.oldSelectTarget==null){
 						openInt=0;
 					}
@@ -225,8 +225,10 @@ namespace AssemblyCSharp
         {
             Camera.main.transform.position = GameController.Units[0][0].transform.position + new Vector3(0, 40, 0);
             GameController.oldSelectTarget = GameController.Units[0][0].gameObject;
-            GameController.oldSelectTarget.GetComponent<Renderer>().material.SetFloat("_Outline", 0.005f);
-        }
+            GameController.oldSelectTarget.transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().materials[1].SetFloat("_Outline", 0.005f);
+			GameController.oldSelectTarget.transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().materials[1].SetColor("_OutlineColor", Color.green);
+
+		}
     }
 
 }

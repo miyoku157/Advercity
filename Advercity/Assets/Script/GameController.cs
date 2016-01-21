@@ -42,19 +42,21 @@ namespace AssemblyCSharp
                     if (selecttarget != GameController.controller)
                     {
                         if (selecttarget != null)
-                        {
+						{if(selecttarget.layer==LayerMask.NameToLayer("Units")){
                             if (oldSelectTarget != null)
                             {
 								if(oldSelectTarget.tag=="Being"){
                                 	oldSelectTarget.transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().materials[1].SetFloat("_Outline", 0.005f);
+
 								}
-								}
-                            oldSelectTarget = selecttarget;
+							}
+							oldSelectTarget = selecttarget;
 							if(oldSelectTarget.tag=="Being"){
                             	oldSelectTarget.transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().materials[1].SetColor("_OutlineColor", Color.green);
                             	oldSelectTarget.transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().materials[1].SetFloat("_Outline", 0.005f);
 							}
 							selecttarget = null;
+							}
                         }
                         //to do
                     }
@@ -122,11 +124,21 @@ namespace AssemblyCSharp
                     {
                         GameObject parent = Hit.collider.transform.parent.gameObject;
                         Renderer[] renderers = parent.GetComponentsInChildren<Renderer>();
-                        int lenght = renderers.GetLength(0);
-                        for (int i = 0; i < lenght; i++)
-                        {
-                            renderers[i].material.color = Color.red;
-                        }
+						MeshRenderer[] renderM;
+						if(renderers.Length==0){
+							renderM=parent.GetComponentsInChildren<MeshRenderer>();
+							int lenght = renderM.Length;
+							for (int i = 0; i < lenght; i++)
+							{
+								renderM[i].material.color = Color.red;
+							}
+						}else{
+	                        int lenght = renderers.GetLength(0);
+	                        for (int i = 0; i < lenght; i++)
+	                        {
+	                            renderers[i].material.color = Color.red;
+	                        }
+						}
                         oldObject = Hit.collider.gameObject;
 
                     }
@@ -135,9 +147,11 @@ namespace AssemblyCSharp
 
                         if (Hit.collider.gameObject != oldSelectTarget)
                         {
+							if(Hit.collider.transform.childCount>1){
                             Hit.collider.transform.GetChild(1).gameObject.GetComponent<SkinnedMeshRenderer>().materials[1].SetColor("_OutlineColor", Color.red);
                             Hit.collider.transform.GetChild(1).gameObject.GetComponent<SkinnedMeshRenderer>().materials[1].SetFloat("_Outline", 0.005f);
                             oldObject = Hit.collider.gameObject;
+							}
                         }
                     }
                 }

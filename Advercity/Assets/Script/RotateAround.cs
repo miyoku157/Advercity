@@ -4,9 +4,9 @@ using System.Collections;
 public class RotateAround : MonoBehaviour
 {
 
-    public float speed = 5.0f;
+    public float speed = 10.0f;
     private float terrainHeight;
-    private float dist = 13.0f;
+    private float dist = 33.0f;
     private bool zoom = false;
     public void Start()
     {

@@ -51,17 +51,11 @@
      <None Include="Assets\Resources\FogOfWar\FogOfWar.shader" />
      <None Include="Assets\Resources\FogOfWar\Outlined_Diffuse.shader" />
      <None Include="Assets\Resources\FogOfWar\Outlined_ONLY.shader" />
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Analytics">
- <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="IA">
  <HintPath>D:/Projet Git/Advercity/Advercity/Assets/IA.dll</HintPath>
