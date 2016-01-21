@@ -37,7 +37,10 @@ public class IHM : MonoBehaviour
 	public void launchGame(){
 			Application.LoadLevel ("Main");
 			int alea=Random.Range (0, 3);
+			int idcamp = 0;
 			GameObject Batiment= Instantiate<GameObject>(UnityEngine.Resources.Load<GameObject>("Prefabs/HQ"));
+			Batiment.GetComponent<Building_manager> ().Idcamp = idcamp;
+			idcamp++;
 			Batiment.transform.position = spot [alea] + new Vector3 (15, 0, 0);
 			GameObject player=Instantiate<GameObject>(UnityEngine.Resources.Load<GameObject> ("Prefabs/Player_character"));
 			player.transform.position = spot [alea];
@@ -56,6 +59,8 @@ public class IHM : MonoBehaviour
 				alea=(precedent+1+Random.Range(0,2))%3;
 				Batiment=Instantiate<GameObject>(UnityEngine.Resources.Load<GameObject>("Prefabs/HQ"));
 				Batiment.transform.position=spot[alea];
+				Batiment.GetComponent<Building_manager> ().Idcamp = idcamp;
+				idcamp++;
 				for (int j=0; j<4;j++){
 					GameObject ennemy= Instantiate<GameObject>(UnityEngine.Resources.Load<GameObject>("Prefabs/Ennemy"));
 					ennemy.transform.position=spot[alea]+Mathf.Pow(-1,j)*new Vector3(5+j,0,5+j);

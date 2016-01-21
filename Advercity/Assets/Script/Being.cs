@@ -13,7 +13,7 @@ namespace AssemblyCSharp
 		public bool isCollecting = false;
 		public bool isAttacking = false;
 		public bool isGoing = false;
-
+		public bool isoccupy= false;
         protected Being target;
 		public int strenght=70;
 		public int stamina;
@@ -37,6 +37,11 @@ namespace AssemblyCSharp
         // Update is called once per frame
         virtual protected void Update()
         {
+			if (isCollecting || isAttacking || isGoing) {
+				isoccupy = true;
+			} else {
+				isoccupy=false;
+			}
 			if (stamina < 0) {
 				GameObject.Destroy(gameObject);
 			}
