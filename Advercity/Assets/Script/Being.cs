@@ -191,8 +191,9 @@ namespace AssemblyCSharp
                     if (isFull || hp <= 0)
                     {
                         move(city.transform.position);
-						isCollecting=true;
-                    }
+                    }else if (hp<0){
+						move(city.transform.position);
+					}
 
                 }
                 yield return new WaitForSeconds(0.5f);
