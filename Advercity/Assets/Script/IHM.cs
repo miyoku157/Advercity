@@ -89,30 +89,34 @@ namespace AssemblyCSharp
         }
         public void openCompagnon()
         {
-			for(int i=0;i<GameController.Units.Length;i++){
-				if(GameController.oldSelectTarget==null){
-					openInt=0;
-				}
-				else if(GameController.oldSelectTarget.GetComponent<Being>()==GameController.Units[0][i]){
-					openInt=i;
-				}
+            for (int i = 0; i < GameController.Units.Length; i++)
+            {
+                if (GameController.oldSelectTarget == null)
+                {
+                    openInt = 0;
+                }
+                else if (GameController.oldSelectTarget.GetComponent<Being>() == GameController.Units[0][i])
+                {
+                    openInt = i;
+                }
+            }
 				if(caracterPanel.activeSelf){
 					caracterPanel.SetActive(false);
 				}else{
 					caracterPanel.SetActive(true);
 					readCharacter();
 				}
-			}
+			
             
         }
 		private void readCharacter(){
 
-				caracterPanel.transform.GetChild(2).GetComponent<Text>().text = "Force : " + GameController.Units[0][openInt].strenght;
-				caracterPanel.transform.GetChild(3).GetComponent<Text>().text = "Endurance : " + GameController.Units[0][openInt].stamina;
-				caracterPanel.transform.GetChild(4).GetComponent<Text>().text = "Intelligence : " + GameController.Units[0][openInt].intellect;
-				caracterPanel.transform.GetChild(5).GetComponent<Text>().text = "Perception : " + GameController.Units[0][openInt].perception;
-				caracterPanel.transform.GetChild(6).GetComponent<Text>().text = "Charisme : " + GameController.Units[0][openInt].charisma;
-				caracterPanel.transform.GetChild(7).GetComponent<Text>().text = "Portée : " + GameController.Units[0][openInt].scope;
+				caracterPanel.transform.GetChild(3).GetComponent<Text>().text = "Force : " + GameController.Units[0][openInt].strenght;
+				caracterPanel.transform.GetChild(4).GetComponent<Text>().text = "Endurance : " + GameController.Units[0][openInt].stamina;
+				caracterPanel.transform.GetChild(5).GetComponent<Text>().text = "Intelligence : " + GameController.Units[0][openInt].intellect;
+				caracterPanel.transform.GetChild(6).GetComponent<Text>().text = "Perception : " + GameController.Units[0][openInt].perception;
+				caracterPanel.transform.GetChild(7).GetComponent<Text>().text = "Charisme : " + GameController.Units[0][openInt].charisma;
+				caracterPanel.transform.GetChild(8).GetComponent<Text>().text = "Portée : " + GameController.Units[0][openInt].scope;
 		}
         public void openInventaire()
         {
