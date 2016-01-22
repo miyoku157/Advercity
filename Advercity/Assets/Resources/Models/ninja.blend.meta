@@ -102,7 +102,7 @@ ModelImporter:
       name: Walk
       takeName: ninja_ms3d_act
       firstFrame: 0
-      lastFrame: 14
+      lastFrame: 13
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -282,7 +282,7 @@ ModelImporter:
       name: SwipeSword
       takeName: ninja_ms3d_act
       firstFrame: 32
-      lastFrame: 44
+      lastFrame: 43
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -372,7 +372,7 @@ ModelImporter:
       name: SpinSword
       takeName: ninja_ms3d_act
       firstFrame: 45
-      lastFrame: 59
+      lastFrame: 58
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -462,7 +462,7 @@ ModelImporter:
       name: Collect
       takeName: ninja_ms3d_act
       firstFrame: 84
-      lastFrame: 95
+      lastFrame: 94
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
