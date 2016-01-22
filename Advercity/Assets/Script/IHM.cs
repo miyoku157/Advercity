@@ -218,6 +218,10 @@ namespace AssemblyCSharp
             string name = downWeapon.GetComponent<Dropdown>().options[equip].text;
             downWeapon.transform.GetChild(0).GetComponent<Text>().text = name;
         }
+		public void returnMenu (){
+			Application.LoadLevel ("MenuHome");
+		}
+
         public void openVille()
         {
         }

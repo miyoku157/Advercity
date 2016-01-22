@@ -79,7 +79,9 @@ namespace AssemblyCSharp
 		protected void DesireCollectCallback(object ressource){
 			Debug.Log ("collect");
 			ResourcesManager res = ressource as ResourcesManager;
-			launchCollect (res.gameObject);
+			if (!isCollecting) {
+				launchCollect (res.gameObject);
+			}
 		}
         protected void DesireInsightCallback(object opponent)
         {

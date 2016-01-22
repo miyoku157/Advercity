@@ -20,6 +20,9 @@ namespace AssemblyCSharp
         protected override void Update()
         {
             base.Update();
+			if (stamina <= 0) {
+				Application.LoadLevel("Loose");
+			}
         }
     }
 }

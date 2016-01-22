@@ -160,13 +160,15 @@ namespace AssemblyCSharp
                 //animation collect
                 while (isGoing)
                 {
+					if(agent.remainingDistance<5){
+						isGoing=false;
+					}
                     yield return new WaitForSeconds(1);
                 }
-                if (Vector3.Distance(Gobject.transform.position, this.transform.position) > 3)
+                if (Vector3.Distance(Gobject.transform.position, this.transform.position) > 5)
                 {
                     move(Gobject.transform.position);
 					isCollecting = true;
-					isGoing=true;
                 }
                 else {
                     int hp = Gobject.transform.parent.GetComponent<ResourcesManager>().HP;
@@ -204,11 +206,12 @@ namespace AssemblyCSharp
                         }
                     }
                     Gobject.transform.parent.GetComponent<ResourcesManager>().HP = hp;
-                    if (isFull || hp <= 0)
+                    if (isFull)
                     {
                         move(city.transform.position);
                     }else if (hp<0){
 						move(city.transform.position);
+						isCollecting=false;
 					}
 
                 }

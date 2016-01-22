@@ -49,6 +49,10 @@
      <Compile Include="Assets\Class\Resources.cs" />
      <Compile Include="Assets\Class\Skill.cs" />
      <Compile Include="Assets\Class\equipment.cs" />
+     <Compile Include="Assets\Resources\RainMaker\Prefab\BaseRainScript.cs" />
+     <Compile Include="Assets\Resources\RainMaker\Prefab\RainCollision.cs" />
+     <Compile Include="Assets\Resources\RainMaker\Prefab\RainScript.cs" />
+     <Compile Include="Assets\Resources\RainMaker\Prefab\RainScript2D.cs" />
      <Compile Include="Assets\ResourcesManager.cs" />
      <Compile Include="Assets\Script\Being.cs" />
      <Compile Include="Assets\Script\Building_manager.cs" />
@@ -71,13 +75,20 @@
      <None Include="Assets\Synapse\Readme.txt" />
      <None Include="Assets\Resources\FogOfWar\Outlined_Diffuse_Bumped.shader" />
      <None Include="Assets\Resources\FogOfWar\FogOfWar.shader" />
+     <None Include="Assets\Resources\RainMaker\Prefab\RainShader.shader" />
      <None Include="Assets\Resources\FogOfWar\Outlined_Diffuse.shader" />
      <None Include="Assets\Resources\FogOfWar\Outlined_ONLY.shader" />
+ <Reference Include="UnityEngine.Advertisements">
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="IA">
  <HintPath>D:/Projet Git/Advercity/Advercity/Assets/IA.dll</HintPath>
