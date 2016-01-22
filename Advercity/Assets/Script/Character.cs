@@ -25,15 +25,7 @@ namespace AssemblyCSharp
         {
             base.Update();
 
-            //Fog of war update; set position and perception of the object and the plane
-            Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
-            Ray rayToPlayerPos = Camera.main.ScreenPointToRay(screenPos);
-            RaycastHit hit;
-            if (Physics.Raycast(rayToPlayerPos, out hit, 1000))
-            {
-                FogOfWarPlane.GetComponent<Renderer>().material.SetFloat("_player_per" + idGroupe, 7.5f);
-                FogOfWarPlane.GetComponent<Renderer>().material.SetVector("_Player_Pos_" + idGroupe.ToString(), hit.point);
-            }
+           
         }
         protected override void GetSensorPositionData(out Vector3 a_position)
         {

@@ -19,13 +19,15 @@ namespace AssemblyCSharp
             spot[0] = new Vector3(150, 150, 625);
             spot[1] = new Vector3(650, 140, 583);
             spot[2] = new Vector3(700, 150, 100);
+
             caracterPanel = GameObject.Find("ImageCadrePersonnage");
             inventory = GameObject.Find("ImageCadreInventaire");
-            caracterPanel.SetActive(false);
-            inventory.SetActive(false);
-            downWeapon = inventory.transform.GetChild(6).gameObject;
-            downArmor = inventory.transform.GetChild(7).gameObject;
-
+			if (caracterPanel != null) {
+				caracterPanel.SetActive (false);
+				inventory.SetActive (false);
+				downWeapon = inventory.transform.GetChild (6).gameObject;
+				downArmor = inventory.transform.GetChild (7).gameObject;
+			}
         }
 
         // Update is called once per frame

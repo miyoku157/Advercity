@@ -25,10 +25,20 @@ namespace AssemblyCSharp
             Units = new List<Being>[2];
             Units[0] = new List<Being>();
             Units[1] = new List<Being>();
-            Units[0].Add(GameObject.Find("ninja").GetComponent<Being>());
-//            Units [1].Add (GameObject.Find ("Cube (1)").GetComponent<Being>());
+            Units[0].Add(GameObject.Find("player").GetComponent<Being>());
+			Units[0].Add(GameObject.Find("ninja").GetComponent<Being>());
+			Units[0].Add(GameObject.Find("ninja (1)").GetComponent<Being>());
+			Units[1].Add(GameObject.Find("Enemy (1)").GetComponent<Being>());
+			Units[1].Add(GameObject.Find("Enemy (2)").GetComponent<Being>());
+			Units[1].Add(GameObject.Find("Enemy").GetComponent<Being>());
 			ressources.Add (GameObject.Find ("Forest").GetComponent<ResourcesManager>());
-        }
+			ressources.Add (GameObject.Find ("Forest (1)").GetComponent<ResourcesManager>());
+			ressources.Add (GameObject.Find ("Metal").GetComponent<ResourcesManager>());
+			ressources.Add (GameObject.Find ("Water").GetComponent<ResourcesManager>());
+			ressources.Add (GameObject.Find ("Crystal (1)").GetComponent<ResourcesManager>());
+			ressources.Add (GameObject.Find ("Crystal").GetComponent<ResourcesManager>());
+
+		}
 
         // Update is called once per frame
         void Update()

@@ -45,7 +45,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Resources\3dnemo-Tornado\Scripts\NoiseMove.js" />
+     <Compile Include="Assets\Resources\Tornado\Scripts\NoiseMove.js" />
      <None Include="Assets\Synapse\Readme.txt" />
      <None Include="Assets\Resources\FogOfWar\Outlined_Diffuse_Bumped.shader" />
      <None Include="Assets\Resources\FogOfWar\FogOfWar.shader" />
