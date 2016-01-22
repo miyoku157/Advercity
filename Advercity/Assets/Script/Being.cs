@@ -158,21 +158,25 @@ namespace AssemblyCSharp
             {
                 bool isFull = true;
                 //animation collect
+				bool arrive=false;
                 while (isGoing)
                 {
-					if(agent.remainingDistance<5){
-						isGoing=false;
-					}
+
                     yield return new WaitForSeconds(1);
                 }
-                if (Vector3.Distance(Gobject.transform.position, this.transform.position) > 5)
+                if (Vector3.Distance(Gobject.transform.position, this.transform.position) > 15)
                 {
                     move(Gobject.transform.position);
 					isCollecting = true;
                 }
                 else {
-                    int hp = Gobject.transform.parent.GetComponent<ResourcesManager>().HP;
-                    hp -= 5;
+					int hp;
+					if(Gobject.transform.parent==null){
+						hp=Gobject.GetComponent<ResourcesManager>().HP;
+					}else{
+                    hp = Gobject.transform.parent.GetComponent<ResourcesManager>().HP;
+					}
+					hp -= 5;
                     for (int i = 0; i < 20; i++)
                     {
                         if (Inventaire[1][i] == null && isFull)
@@ -205,13 +209,16 @@ namespace AssemblyCSharp
 
                         }
                     }
+					if(Gobject.transform.parent==null){
+						Gobject.GetComponent<ResourcesManager>().HP = hp;
+					}else{
                     Gobject.transform.parent.GetComponent<ResourcesManager>().HP = hp;
-                    if (isFull)
+					}if (isFull)
                     {
                         move(city.transform.position);
+						isCollecting=true;
                     }else if (hp<0){
 						move(city.transform.position);
-						isCollecting=false;
 					}
 
                 }

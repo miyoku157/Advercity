@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class ResourcesManager : MonoBehaviour
@@ -19,11 +19,7 @@ public class ResourcesManager : MonoBehaviour
             GameObject.Destroy(this.gameObject);
         }
     }
-    void OnTriggerEnter(Collider coll)
-    {
-		coll.gameObject.GetComponent<AssemblyCSharp.Being> ().isGoing = false;
-        //launch animcollect
-    }
+    
 	void GetSensorPositionData(out Vector3 a_position)
 	{
 			a_position = gameObject.transform.position;
