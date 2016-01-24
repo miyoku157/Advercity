@@ -18,9 +18,9 @@ namespace AssemblyCSharp
         void Awake()
         {
 			spot = new Vector3[3];
-			spot[0] = new Vector3(150, 150, 625);
-			spot[1] = new Vector3(650, 140, 583);
-			spot[2] = new Vector3(700, 150, 100);
+			spot[0] = new Vector3(125, 41, 625);
+			spot[1] = new Vector3(650, 38, 583);
+			spot[2] = new Vector3(704.5f, 49.4f, 100);
 			Units=new List<Being>[3];
 			for (int i=0; i<3; i++) {
 				Units[i]=new List<Being>();
