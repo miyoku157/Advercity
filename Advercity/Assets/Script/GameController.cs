@@ -31,13 +31,19 @@ namespace AssemblyCSharp
 			GameObject Batiment = Instantiate<GameObject> (UnityEngine.Resources.Load<GameObject> ("Prefabs/HQ"));
 			Batiment.GetComponent<Building_manager> ().Idcamp = idcamp;
 			idcamp++;
-			Batiment.transform.position = spot [alea] + new Vector3 (15, 0, 0);
+			Batiment.transform.position = spot [alea] + new Vector3 (100, 0, 0);
 			GameObject player = Instantiate<GameObject> (UnityEngine.Resources.Load<GameObject> ("Prefabs/Player"));
 			player.transform.position = spot [alea];
+			NavMeshHit hit;
+			if (NavMesh.SamplePosition (player.transform.position, out hit, 1.0f, NavMesh.AllAreas)) {
+				player.transform.position=hit.position;
+			}
+			player.AddComponent<NavMeshAgent> ();
+
 			player.GetComponent<Being> ().city = Batiment;
 			GameController.Units [0].Add (player.GetComponent<Being> ());
 			GameObject[] compagnon = new GameObject[2];
-			for (int i = 0; i < 0; i++) {
+			for (int i = 0; i < 2; i++) {
 				compagnon [i] = Instantiate<GameObject> (UnityEngine.Resources.Load<GameObject> ("Prefabs/ninja"));
 				compagnon [i].transform.position = spot [alea] - i * new Vector3 (10, 0, 10) + new Vector3 (5, 0, 5);
 				compagnon [i].GetComponent<Being> ().city = Batiment;

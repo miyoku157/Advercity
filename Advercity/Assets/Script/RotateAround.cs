@@ -10,7 +10,7 @@ public class RotateAround : MonoBehaviour
     private bool zoom = false;
     public void Start()
     {
-        //this.transform.position = GameObject.Find("ninja").transform.position + new Vector3(0, 50, 0);
+        this.transform.position = GameObject.Find("ninja(Clone)").transform.position + new Vector3(0, 50, 0);
     }
     private void moveRight()
     {
