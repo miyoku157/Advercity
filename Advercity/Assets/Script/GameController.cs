@@ -10,11 +10,55 @@ namespace AssemblyCSharp
 		public static List<ResourcesManager> ressources;
         public static GameObject selecttarget;
         public static GameObject oldSelectTarget;
+		public static Vector3[] spot;
+
         GameObject attObj;
         GameObject oldObject = null;
         // Use this for initialization
         void Awake()
         {
+			spot = new Vector3[3];
+			spot[0] = new Vector3(150, 150, 625);
+			spot[1] = new Vector3(650, 140, 583);
+			spot[2] = new Vector3(700, 150, 100);
+			Units=new List<Being>[3];
+			for (int i=0; i<3; i++) {
+				Units[i]=new List<Being>();
+			}
+			int alea = Random.Range (0, 3);
+			
+			int idcamp = 0;
+			GameObject Batiment = Instantiate<GameObject> (UnityEngine.Resources.Load<GameObject> ("Prefabs/HQ"));
+			Batiment.GetComponent<Building_manager> ().Idcamp = idcamp;
+			idcamp++;
+			Batiment.transform.position = spot [alea] + new Vector3 (15, 0, 0);
+			GameObject player = Instantiate<GameObject> (UnityEngine.Resources.Load<GameObject> ("Prefabs/Player"));
+			player.transform.position = spot [alea];
+			player.GetComponent<Being> ().city = Batiment;
+			GameController.Units [0].Add (player.GetComponent<Being> ());
+			GameObject[] compagnon = new GameObject[2];
+			for (int i = 0; i < 0; i++) {
+				compagnon [i] = Instantiate<GameObject> (UnityEngine.Resources.Load<GameObject> ("Prefabs/ninja"));
+				compagnon [i].transform.position = spot [alea] - i * new Vector3 (10, 0, 10) + new Vector3 (5, 0, 5);
+				compagnon [i].GetComponent<Being> ().city = Batiment;
+				GameController.Units [0].Add (compagnon [i].GetComponent<Being> ());
+			}
+			
+			for (int i = 0; i < 2; i++) {
+				int precedent = alea;
+				alea = (precedent + 1 + Random.Range (0, 2)) % 3;
+				Batiment = Instantiate<GameObject> (UnityEngine.Resources.Load<GameObject> ("Prefabs/HQ"));
+				Batiment.transform.position = spot [alea];
+				Batiment.GetComponent<Building_manager> ().Idcamp = idcamp;
+				idcamp++;
+				for (int j = 0; j < 4; j++) {
+					GameObject ennemy = Instantiate<GameObject> (UnityEngine.Resources.Load<GameObject> ("Prefabs/Enemy"));
+					ennemy.transform.position = spot [alea] + Mathf.Pow (-1, j) * new Vector3 (5 + j, 0, 5 + j);
+					ennemy.GetComponent<Being> ().city = Batiment;
+					GameController.Units [i + 1].Add (ennemy.GetComponent<Being> ());
+				}
+				
+			}
             attObj = null;
             selecttarget = null;
 			ressources = new List<ResourcesManager> ();
@@ -22,7 +66,7 @@ namespace AssemblyCSharp
             StartCoroutine(checkObject());
 
             //Temporaire
-            Units = new List<Being>[2];
+            /*Units = new List<Being>[2];
             Units[0] = new List<Being>();
             Units[1] = new List<Being>();
             Units[0].Add(GameObject.Find("player").GetComponent<Being>());
@@ -37,7 +81,7 @@ namespace AssemblyCSharp
 			ressources.Add (GameObject.Find ("Water").GetComponent<ResourcesManager>());
 			ressources.Add (GameObject.Find ("Crystal (1)").GetComponent<ResourcesManager>());
 			ressources.Add (GameObject.Find ("Crystal").GetComponent<ResourcesManager>());
-
+*/
 		}
 
         // Update is called once per frame

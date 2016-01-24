@@ -33,14 +33,15 @@ namespace AssemblyCSharp
             agent = GetComponent<NavMeshAgent>();
             //to delete
             stamina = 100;
-            city = GameObject.Find("Centre ville");
 			animator = GetComponent<Animator>();
         }
         // Update is called once per frame
         virtual protected void Update()
         {
-			if (agent.remainingDistance ==0) {
-				isGoing=false;
+			if (agent.isOnNavMesh) {
+				if (agent.remainingDistance == 0) {
+					isGoing = false;
+				}
 			}
 			if(animator)
 			{
@@ -158,7 +159,6 @@ namespace AssemblyCSharp
             {
                 bool isFull = true;
                 //animation collect
-				bool arrive=false;
                 while (isGoing)
                 {
 

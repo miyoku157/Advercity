@@ -12,7 +12,7 @@ public class Building_manager : MonoBehaviour
     Text LabelEau;
     Text LabelXeno;
     private Brain synapseBrain;
-    public int Idcamp = 1;
+    public int Idcamp;
     public int[] visitedMark;
     private GameObject[] mark;
     // Use this for initialization
@@ -36,7 +36,9 @@ public class Building_manager : MonoBehaviour
         {
             mark[i] = GameObject.Find("mark1 (" + i + ")");
         }
-        StartCoroutine("StartAI");
+		if (Idcamp != 0) {
+			StartCoroutine ("StartAI");
+		}
     }
     IEnumerator StartAI()
     {
