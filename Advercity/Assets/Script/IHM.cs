@@ -42,7 +42,7 @@ namespace AssemblyCSharp
         public void launchGame()
         {
             Application.LoadLevel("Main");
-            int alea = Random.Range(0, 3);
+           /* int alea = Random.Range(0, 3);
             int idcamp = 0;
             GameObject Batiment = Instantiate<GameObject>(UnityEngine.Resources.Load<GameObject>("Prefabs/HQ"));
             Batiment.GetComponent<Building_manager>().Idcamp = idcamp;
@@ -77,7 +77,7 @@ namespace AssemblyCSharp
                     GameController.Units[i + 1].Add(ennemy.GetComponent<Being>());
                 }
 
-            }
+            }*/
         }
         public void closeCompagnon()
         {
