@@ -33,12 +33,10 @@ namespace AssemblyCSharp
         }
         public void credits()
         {
-			Application.UnloadLevel ("MenuHome");
             Application.LoadLevel("Credits");
         }
         public void launchGame()
         {
-			Application.UnloadLevel ("MenuHome");
 			Application.LoadLevel ("Main");
         }
         public void closeCompagnon()

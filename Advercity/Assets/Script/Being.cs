@@ -82,7 +82,7 @@ namespace AssemblyCSharp
         //Deal damage based on the weapon. Will not be heritate by hazard script
         virtual public void dealDamage(Being target)
         {
-            int Bstrength = strenght / 10;
+            int Bstrength = strenght / 20;
             int basdamage = 0;
             if (Inventaire[0][0] == null)
             {
@@ -137,7 +137,7 @@ namespace AssemblyCSharp
                         //add attack animation here
                     }
                 }
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(1f);
                 if (Gobject == null)
                 {
                     isAttacking = false;
