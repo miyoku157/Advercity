@@ -26,12 +26,15 @@ namespace AssemblyCSharp
 				Units[i]=new List<Being>();
 			}
 			int alea = Random.Range (0, 3);
-			
+			List<int> iteger = new List<int> ();
+			iteger.Add(0);
+			iteger.Add (1);
+				iteger.Add(2);
 			int idcamp = 0;
 			GameObject Batiment = Instantiate<GameObject> (UnityEngine.Resources.Load<GameObject> ("Prefabs/HQ"));
 			Batiment.GetComponent<Building_manager> ().Idcamp = idcamp;
 			idcamp++;
-			Batiment.transform.position = spot [alea] + new Vector3 (100, 0, 0);
+			Batiment.transform.position = spot [alea] + new Vector3 (10, 0, 0);
 			GameObject player = Instantiate<GameObject> (UnityEngine.Resources.Load<GameObject> ("Prefabs/Player"));
 			player.transform.position = spot [alea];
 			NavMeshHit hit;
@@ -49,10 +52,14 @@ namespace AssemblyCSharp
 				compagnon [i].GetComponent<Being> ().city = Batiment;
 				GameController.Units [0].Add (compagnon [i].GetComponent<Being> ());
 			}
-			
+			iteger.Remove (alea);
 			for (int i = 0; i < 2; i++) {
-				int precedent = alea;
-				alea = (precedent + 1 + Random.Range (0, 2)) % 3;
+				 alea= Random.Range(0,2);
+				if(iteger.Count==0){
+					alea=iteger[0];
+				}else{
+				alea=iteger[alea];
+				}
 				Batiment = Instantiate<GameObject> (UnityEngine.Resources.Load<GameObject> ("Prefabs/HQ"));
 				Batiment.transform.position = spot [alea];
 				Batiment.GetComponent<Building_manager> ().Idcamp = idcamp;
