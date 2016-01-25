@@ -16,6 +16,7 @@ namespace AssemblyCSharp
         protected override void Start()
         {
             base.Start();
+			strenght = 500;
         }
         protected override void Update()
         {

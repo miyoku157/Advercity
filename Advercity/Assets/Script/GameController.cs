@@ -42,7 +42,7 @@ namespace AssemblyCSharp
 				player.transform.position=hit.position;
 			}
 			player.AddComponent<NavMeshAgent> ();
-
+			player.GetComponent<NavMeshAgent> ().speed = 12;
 			player.GetComponent<Being> ().city = Batiment;
 			GameController.Units [0].Add (player.GetComponent<Being> ());
 			GameObject[] compagnon = new GameObject[2];
@@ -236,7 +236,7 @@ namespace AssemblyCSharp
                     GameController.controller.transform.position = Hit.point;
                     return GameController.controller.gameObject;
                 }
-                else if (Hit.collider.tag != "Ennemy")
+                else
                 {
                     return Hit.collider.gameObject;
                 }

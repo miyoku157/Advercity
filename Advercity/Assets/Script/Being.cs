@@ -128,6 +128,7 @@ namespace AssemblyCSharp
                 if (Vector3.Distance(Gobject.transform.position, this.transform.position) > scope)
                 {
                     move(Gobject.transform.position);
+					isAttacking=true;
                 }
                 else
                 {
@@ -137,7 +138,7 @@ namespace AssemblyCSharp
                         //add attack animation here
                     }
                 }
-                yield return new WaitForSeconds(1f);
+                yield return new WaitForSeconds(0.5f);
                 if (Gobject == null)
                 {
                     isAttacking = false;
