@@ -171,6 +171,7 @@ namespace AssemblyCSharp
 					isCollecting = true;
                 }
                 else {
+                    isGoing = false;
 					int hp;
 					if(Gobject.transform.parent==null){
 						hp=Gobject.GetComponent<ResourcesManager>().HP;
